@@ -7,6 +7,7 @@ public class HighlihghtOnMouseOver : MonoBehaviour
 {
     public Sprite startSprie;
     public Sprite endSprie;
+    public Canvas openCanvas;
 
     void OnMouseEnter()
     {
@@ -17,8 +18,12 @@ public class HighlihghtOnMouseOver : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = startSprie; // Przywróæ oryginalny kolor
     }
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
-        
+        OpenFraction();
+    }
+    public void OpenFraction()
+    {
+        openCanvas.gameObject.SetActive(true);
     }
 }
