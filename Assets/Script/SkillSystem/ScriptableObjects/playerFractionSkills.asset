@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: playerFractionSkills
   m_EditorClassIdentifier: 
   passiveGoldIncome: 4
-  goldIncomeForUnit: 2
+  goldIncomeForUnit: 1
   unitHealthPoints: 4
-  leaderHealthPoints: 2
+  leaderHealthPoints: 1
   cooldownOfSkills: 4
-  unitAttackSpeed: 2
+  unitAttackSpeed: 1
   unitDamage: 4
-  unitCriticalHitChance: 3
+  unitCriticalHitChance: 1
