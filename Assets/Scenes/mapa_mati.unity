@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bestiary
+  m_text: 'Skills
 
 '
   m_isRightToLeft: 0
@@ -267,6 +267,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
+      propertyPath: bigPoints
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
+      propertyPath: smallPoints
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5930088976342033285, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: m_Name
       value: Fraction
@@ -329,10 +337,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 620514799}
     m_Modifications:
+    - target: {fileID: 2739716905722491087, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739716905722491087, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3479857713525756067, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
       propertyPath: m_Name
       value: skile
       objectReference: {fileID: 0}
+    - target: {fileID: 3479857713525756067, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611676922763812908, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982610645143366497, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 869.0154
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982610645143366497, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 489.1706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982610645143366497, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 337.2201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982610645143366497, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 238.21066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597230059440046227, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597230059440046227, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fe65634f56a598040835f30084924fba, type: 3}
+    - target: {fileID: 8246822723790594730, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09b7020c7cfc46045acff1dd957caf00, type: 3}
     - target: {fileID: 8358967482902885450, guid: 1594e498e9732e044852e9c50c8437f6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4861
@@ -2813,7 +2865,7 @@ GameObject:
   - component: {fileID: 1169230788}
   - component: {fileID: 1169230787}
   m_Layer: 5
-  m_Name: ButtonBestiary
+  m_Name: ButtonSkills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
