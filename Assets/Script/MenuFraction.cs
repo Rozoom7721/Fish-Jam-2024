@@ -11,6 +11,7 @@ public class MenuFraction : MonoBehaviour
     public Image unit2;
     public Image unit3;
     public Image unit4;
+    public Image herb;
     public void Attack()
     {
         SceneManager.LoadScene("SampleScene");

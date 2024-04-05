@@ -7,7 +7,8 @@ public class HighlihghtOnMouseOver : MonoBehaviour
 {
     public Sprite startSprie;
     public Sprite endSprie;
-    public Canvas openCanvas;
+    public Castle castle;
+    public Description description;
 
     void OnMouseEnter()
     {
@@ -20,10 +21,9 @@ public class HighlihghtOnMouseOver : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        OpenFraction();
+        
+        castle.SpriteChange();
+        description.ChangeDesc();
     }
-    public void OpenFraction()
-    {
-        openCanvas.gameObject.SetActive(true);
-    }
+
 }
