@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.kierancoppins.decision-trees": {
+      "version": "file:D:/unity/Decision-Tree-Package",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.kierancoppins.generic-helpers": "1.0.2"
+      }
+    },
+    "com.kierancoppins.generic-helpers": {
+      "version": "file:D:/unity/Generic-Helpers",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
