@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FractionStatistics", menuName = "ScriptableObjects/FractionStatistics")]
 public class FractionStatistics : MonoBehaviour
 {
 

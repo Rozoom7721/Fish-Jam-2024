@@ -16,8 +16,13 @@ public class Fraction : MonoBehaviour
     public int smallPoints;
 
 
-    private List<Unit> availble_units;
-    private List<Unit> selected_units;
+    private List<UnitStats> availble_units;
+    private List<UnitStats> selected_units;
+
+
+    [SerializeField]
+    private List<UnitStats> all_unit_types;
+
 
     private List<ISkillOnClickListener> skillOnClickListeners;
     public void addSkillOnClickListener(ISkillOnClickListener listener)
@@ -63,8 +68,8 @@ public class Fraction : MonoBehaviour
 
     private void CalculateGoldIncome()
     {
-        fractionStatistics.passiveGoldIncome = fractionPassives.basePassiveGoldIncome + 10 * Mathf.Pow(2, fractionSkills.passiveGoldIncome);
-        fractionStatistics.goldIncomeForUnit = fractionPassives.baseGoldIncomeForUnit + 10 * Mathf.Pow(2, fractionSkills.goldIncomeForUnit);
+        fractionStatistics.passiveGoldIncome = fractionPassives.basePassiveGoldIncome + 10.0 * Mathf.Pow(2, fractionSkills.passiveGoldIncome);
+        fractionStatistics.goldIncomeForUnit = fractionPassives.baseGoldIncomeForUnit * 5.0 + 50.0 * fractionSkills.goldIncomeForUnit + 10 * Mathf.Pow(2, fractionSkills.goldIncomeForUnit);
     }
 
     private void CalculateHealthPoints()
@@ -197,12 +202,40 @@ public class Fraction : MonoBehaviour
 
     public void AddUnit(string unitID)
     {
-
+        foreach(UnitStats unit in all_unit_types)
+        {
+            if(unit.unitId == unitID)
+            {
+                if(!availble_units.Contains(unit))
+                {
+                    availble_units.Add(unit);
+                    break;
+                }
+            }
+        }
     }
 
     public void SelectUnit(string unitID)
     {
+        foreach (UnitStats unit in all_unit_types)
+        {
+            if (unit.unitId == unitID)
+            {
 
+                if(availble_units.Contains(unit))
+                {
+                    if(!selected_units.Contains(unit))
+                    {
+                        selected_units.Add(unit);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Unit is not avaible (not bought)");
+                }
+
+            }
+        }
     }
 
 
