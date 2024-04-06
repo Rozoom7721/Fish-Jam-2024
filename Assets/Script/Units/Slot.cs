@@ -9,6 +9,7 @@ public class Slot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+
         if(transform.childCount == 0)
         {
             GameObject dropped = eventData.pointerDrag;
@@ -18,10 +19,13 @@ public class Slot : MonoBehaviour, IDropHandler
             {
                 draggableItem.parentAfterDrag = transform; 
             }
-            if (draggableItem.id == 1)
+
+
+            Debug.LogWarning("Fix Me 2!");
+/*            if (draggableItem.id == 1)
             {
                 Debug.Log("typ 1");
-            }
+            }*/
         }
       
 

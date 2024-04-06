@@ -16,12 +16,19 @@ public class Fraction : MonoBehaviour
     public int smallPoints;
 
 
-    private List<UnitStats> availble_units;
-    private List<UnitStats> selected_units;
+    public List<UnitStats> availbleUnits;
 
+    public UnitStats meleeUnit;
+    public UnitStats rangeUnit;
+    public UnitStats tankUnit;
+    public UnitStats healerUnit;
 
-    [SerializeField]
-    private List<UnitStats> all_unit_types;
+    public GameObject meleePrefab;
+    public GameObject rangePrefab;
+    public GameObject tankPrefab;
+    public GameObject healerPrefab;
+
+    public List<UnitStats> all_unit_types;
 
 
     private List<ISkillOnClickListener> skillOnClickListeners;
@@ -48,11 +55,6 @@ public class Fraction : MonoBehaviour
         RecalculateStatistits();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void RecalculateStatistits()
     {
@@ -206,9 +208,9 @@ public class Fraction : MonoBehaviour
         {
             if(unit.unitId == unitID)
             {
-                if(!availble_units.Contains(unit))
+                if(!availbleUnits.Contains(unit))
                 {
-                    availble_units.Add(unit);
+                    availbleUnits.Add(unit);
                     break;
                 }
             }
@@ -217,17 +219,36 @@ public class Fraction : MonoBehaviour
 
     public void SelectUnit(string unitID)
     {
+
+        Debug.Log("SelectUnit: " + unitID);
+
         foreach (UnitStats unit in all_unit_types)
         {
             if (unit.unitId == unitID)
             {
 
-                if(availble_units.Contains(unit))
+                if(availbleUnits.Contains(unit))
                 {
-                    if(!selected_units.Contains(unit))
+                    if(unitID.Contains("melee"))
                     {
-                        selected_units.Add(unit);
+                        meleeUnit = unit;
                     }
+
+                    if(unitID.Contains("range"))
+                    {
+                        rangeUnit = unit;
+                    }
+
+                    if(unitID.Contains("tank"))
+                    {
+                        tankUnit = unit;
+                    }
+
+                    if(unitID.Contains("healer"))
+                    {
+                        healerUnit = unit;
+                    }
+
                 }
                 else
                 {
@@ -237,6 +258,41 @@ public class Fraction : MonoBehaviour
             }
         }
     }
+
+
+    public void spawnUnit(string unitType)
+    {
+        switch (unitType)
+        {
+
+            case "melee":
+            {
+                // instantiate melee in fight system, unit.init() must be called right after instantiate
+                break;
+            }
+
+            case "range":
+                {
+                    // instantiate range in fight system, unit.init() must be called right after instantiate
+                    break;
+                }
+
+
+            case "tank":
+                {
+                    // instantiate tank in fight system, unit.init() must be called right after instantiate
+                    break;
+                }
+
+            case "healer":
+                {
+                    // instantiate healer in fight system, unit.init() must be called right after instantiate
+                    break;
+                }
+        }
+
+    }
+
 
 
 }

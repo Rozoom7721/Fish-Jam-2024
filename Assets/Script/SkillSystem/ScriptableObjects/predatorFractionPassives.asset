@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e95086a1da4ef46af765aa7d43415c, type: 3}
   m_Name: predatorFractionPassives
   m_EditorClassIdentifier: 
-  basePassiveGoldIncome: 0
-  baseGoldIncomeForUnit: 0
-  baseUnitHealthPoints: 0
-  baseLeaderHealthPoints: 0
-  baseCooldownOfSkills: 0
-  baseUnitAttackSpeed: 0
-  baseUnitDamage: 0
-  baseUnitCriticalHitChance: 0
+  basePassiveGoldIncome: 22
+  baseGoldIncomeForUnit: 8
+  baseUnitHealthPoints: 450
+  baseLeaderHealthPoints: 9000
+  baseCooldownOfSkills: 2.3
+  baseUnitAttackSpeed: 1
+  baseUnitDamage: 125
+  baseUnitCriticalHitChance: 0.125

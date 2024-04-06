@@ -6,12 +6,12 @@ public class HealerUnit : MonoBehaviour, IUnit
 {
 
  
-    public UnitStats Stats { get; set; }
+    public UnitStatistics Stats { get; set; }
 
 
     public double CurrentHealthPoints { get; set; }
 
-    public void Attack(double fractionDamage, IUnit otherUnit)
+    public void Attack(IUnit otherUnit)
     {
 
     }

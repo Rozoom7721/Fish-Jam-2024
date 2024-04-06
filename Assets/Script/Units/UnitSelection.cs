@@ -6,9 +6,11 @@ using UnityEngine.EventSystems;
 public class UnitSelection : MonoBehaviour,  IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private CanvasGroup canvasGroup;
-    public int id;
+    public string id;
     public Image image;
     public bool unlock;
+
+    
 
    [HideInInspector] public Transform parentAfterDrag;
 
@@ -23,14 +25,15 @@ public class UnitSelection : MonoBehaviour,  IBeginDragHandler, IEndDragHandler,
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        foreach (int num in UnitList.unit)
+        Debug.LogWarning("Fix me!");
+/*        foreach (int num in UnitList.unit)
         {
             if (num == id)
             {
                 unlock = true;
-                break; 
+                break;
             }
-        }
+        }*/
 
         if (unlock)
         {

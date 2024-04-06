@@ -20,15 +20,60 @@ public class UnitStatistics : MonoBehaviour
     public UnitStats unitStats;
     public Fraction fraction;
 
-    void Start()
+    public void init()
     {
         if (fraction==null)
         {
             fraction = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
         }
+        
         fractionSkills = fraction.fractionSkills;
         fractionPassives=fraction.fractionPassives;
+
+        initializeUnitData();
+        RecalculateStatistics();
     }
+
+    private void initializeUnitData()
+    {
+        // for melee unit
+        MeleeUnit meleeUnit;
+        gameObject.TryGetComponent<MeleeUnit>(out meleeUnit);
+        if(meleeUnit)
+        {
+            unitStats = fraction.meleeUnit;
+            return;
+        }
+
+        // for range unit
+        RangeUnit rangeUnit;
+        gameObject.TryGetComponent<RangeUnit>(out rangeUnit);
+        if (rangeUnit)
+        {
+            unitStats = fraction.rangeUnit;
+            return;
+        }
+
+        // for tank unit
+        TankUnit tankUnit;
+        gameObject.TryGetComponent<TankUnit>(out tankUnit);
+        if (tankUnit)
+        {
+            unitStats = fraction.tankUnit;
+            return;
+        }
+
+        // for healer unit
+        HealerUnit healerUnit;
+        gameObject.TryGetComponent<HealerUnit>(out healerUnit);
+        if (healerUnit)
+        {
+            unitStats = fraction.healerUnit;
+            return;
+        }
+
+    }
+
 
     public void RecalculateStatistics()
     {

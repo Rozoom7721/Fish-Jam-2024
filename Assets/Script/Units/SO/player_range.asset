@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed47a31c3fd32cc45b13e588d62340e4, type: 3}
+  m_Script: {fileID: 0}
   m_Name: player_range
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitHealthPoints: 0
   unitDamage: 0
   unitAttackSpeed: 0
@@ -19,6 +19,7 @@ MonoBehaviour:
   unitCooldown: 0
   unitMovementSpeed: 0
   unitGoldMultiplier: 0
-  unitCost: 0
+  unitCostInSeconds: 0
   unitRange: 0
   unitId: 
+  unitIsHealer: 0

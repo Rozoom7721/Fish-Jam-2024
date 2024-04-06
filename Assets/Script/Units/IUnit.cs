@@ -5,12 +5,12 @@ using UnityEngine;
 public interface IUnit
 {
     double CurrentHealthPoints { get; set; }
-    UnitStats Stats { get; set; }
+    UnitStatistics Stats { get; set; }
 
 
-    void Attack(double fractionDamage, IUnit otherUnit)
+    void Attack(IUnit otherUnit)
     {
-        double damage= fractionDamage* Stats.unitDamage;
+        double damage = Stats.unitDamage;
         otherUnit.TakeDamage(damage);
 
     }
