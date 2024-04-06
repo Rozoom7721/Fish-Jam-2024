@@ -10,6 +10,10 @@ public class UnitSelection : MonoBehaviour,  IBeginDragHandler, IEndDragHandler,
     public Image image;
     public bool unlock;
 
+    public UnitStats unitStats;
+
+    private Fraction playerFraction;
+
     
 
    [HideInInspector] public Transform parentAfterDrag;
@@ -17,23 +21,35 @@ public class UnitSelection : MonoBehaviour,  IBeginDragHandler, IEndDragHandler,
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-   
 
-
+        findPlayerFraction();
     }
+
+    private void findPlayerFraction()
+    {
+        playerFraction = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
+        if (!playerFraction) throw new System.Exception("Missing player fraction object!");
+    }
+
     void OnEnable()
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        Debug.LogWarning("Fix me!");
-/*        foreach (int num in UnitList.unit)
+        if(playerFraction == null)
         {
-            if (num == id)
+            findPlayerFraction();
+        }
+
+
+        Debug.LogWarning("Fix me!");
+        foreach (UnitStats unit in playerFraction.availbleUnits)
+        {
+            if (unit == unitStats)
             {
                 unlock = true;
                 break;
             }
-        }*/
+        }
 
         if (unlock)
         {

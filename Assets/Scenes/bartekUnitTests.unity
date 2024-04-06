@@ -181,11 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
       propertyPath: availbleUnits.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
       propertyPath: all_unit_types.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
       propertyPath: availbleUnits.Array.data[0]
@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: availbleUnits.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 67642ac991de86942a3bd179eb3f15d4, type: 2}
+    - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
+      propertyPath: availbleUnits.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3dcfad70d88f27498cd3face25b0592, type: 2}
     - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
       propertyPath: all_unit_types.Array.data[0]
       value: 
@@ -215,6 +219,22 @@ PrefabInstance:
       propertyPath: all_unit_types.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: c3dcfad70d88f27498cd3face25b0592, type: 2}
+    - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
+      propertyPath: all_unit_types.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ce4b8f76930fce42a0aab3400073754, type: 2}
+    - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
+      propertyPath: all_unit_types.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1029d1c938def9f45bb3b358a941ff13, type: 2}
+    - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
+      propertyPath: all_unit_types.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 64f7106aa9c019145b2ed4cf8b673b2d, type: 2}
+    - target: {fileID: 8778276527219591498, guid: f40fbc0113b8ccf4a85357812e029128, type: 3}
+      propertyPath: all_unit_types.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: af35f10fa9270fa46916085c667748a8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -618,6 +638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitSelectionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2385886874731375015, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: id
+      value: guano_tank
+      objectReference: {fileID: 0}
     - target: {fileID: 2431891947460591026, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -797,6 +821,18 @@ PrefabInstance:
     - target: {fileID: 4632545458954845574, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943173697643692746, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: id
+      value: guano_range
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398164636091653369, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: id
+      value: guano_healer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426150427892800016, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: id
+      value: guano_melee
       objectReference: {fileID: 0}
     - target: {fileID: 6636455455041577909, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_AnchorMax.y
