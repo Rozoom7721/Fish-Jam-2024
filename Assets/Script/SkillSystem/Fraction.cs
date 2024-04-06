@@ -113,8 +113,8 @@ public class Fraction : MonoBehaviour
 
     private void CalculateGoldIncome()
     {
-        fractionStatistics.passiveGoldIncome = fractionPassives.basePassiveGoldIncome + 10.0 * Mathf.Pow(2, fractionSkills.passiveGoldIncome);
-        fractionStatistics.goldIncomeForUnit = fractionPassives.baseGoldIncomeForUnit * 5.0 + 50.0 * fractionSkills.goldIncomeForUnit + 10 * Mathf.Pow(2, fractionSkills.goldIncomeForUnit);
+        fractionStatistics.passiveGoldIncome = fractionPassives.basePassiveGoldIncome + fractionSkills.passiveGoldIncome;
+        fractionStatistics.goldIncomeForUnit = fractionPassives.baseGoldIncomeForUnit + fractionSkills.goldIncomeForUnit;
     }
 
     private void CalculateHealthPoints()
@@ -325,39 +325,6 @@ public class Fraction : MonoBehaviour
         {
             healerUnit = null;
             return;
-        }
-
-    }
-
-    public void spawnUnit(string unitType)
-    {
-        switch (unitType)
-        {
-
-            case "melee":
-            {
-                    // instantiate melee in fight system, unit.init(this) must be called right after instantiate
-                    break;
-            }
-
-            case "range":
-                {
-                    // instantiate range in fight system, unit.init(this) must be called right after instantiate
-                    break;
-                }
-
-
-            case "tank":
-                {
-                    // instantiate tank in fight system, unit.init(this) must be called right after instantiate
-                    break;
-                }
-
-            case "healer":
-                {
-                    // instantiate healer in fight system, unit.init(this) must be called right after instantiate
-                    break;
-                }
         }
 
     }

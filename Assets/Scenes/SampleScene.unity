@@ -232,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3766c92dcb05545439f9b15e3f5f81b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f51b06d1745d4e4fa3925a0e942dc2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 250185061}
   - component: {fileID: 250185063}
   - component: {fileID: 250185062}
+  - component: {fileID: 250185064}
   m_Layer: 5
   m_Name: range
   m_TagString: Untagged
@@ -395,6 +396,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250185060}
   m_CullTransparentMesh: 1
+--- !u!114 &250185064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250185060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e78c59fcbcf58246b23ff65ed95a673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: range
 --- !u!1 &327838992
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +811,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.41, y: 0, z: -14.36}
+  m_LocalPosition: {x: -10.24, y: 0, z: -14.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1803,6 +1817,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670202262}
   m_CullTransparentMesh: 1
+--- !u!1 &706231851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 706231852}
+  m_Layer: 0
+  m_Name: enemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &706231852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706231851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.97, y: -2.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1920524156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760161987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1975,7 @@ GameObject:
   - component: {fileID: 804748660}
   - component: {fileID: 804748662}
   - component: {fileID: 804748661}
+  - component: {fileID: 804748663}
   m_Layer: 5
   m_Name: Panel top
   m_TagString: Untagged
@@ -1997,6 +2043,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804748659}
   m_CullTransparentMesh: 1
+--- !u!114 &804748663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804748659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8886563aecb81b64395e380bf92c4356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpText: {fileID: 2038305716}
+  goldText: {fileID: 660396550}
 --- !u!1 &863671550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2132,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863671550}
   m_CullTransparentMesh: 1
+--- !u!1 &908882636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908882637}
+  m_Layer: 0
+  m_Name: playerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908882637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908882636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.61, y: -2.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1920524156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &914738193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2250,7 @@ GameObject:
   - component: {fileID: 957264020}
   - component: {fileID: 957264022}
   - component: {fileID: 957264021}
+  - component: {fileID: 957264023}
   m_Layer: 5
   m_Name: tank
   m_TagString: Untagged
@@ -2224,6 +2316,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957264019}
   m_CullTransparentMesh: 1
+--- !u!114 &957264023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957264019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e78c59fcbcf58246b23ff65ed95a673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: tank
 --- !u!1 &1015083254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,6 +2863,7 @@ GameObject:
   - component: {fileID: 1249217265}
   - component: {fileID: 1249217267}
   - component: {fileID: 1249217266}
+  - component: {fileID: 1249217268}
   m_Layer: 5
   m_Name: health
   m_TagString: Untagged
@@ -2823,6 +2929,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249217264}
   m_CullTransparentMesh: 1
+--- !u!114 &1249217268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249217264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e78c59fcbcf58246b23ff65ed95a673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: healer
 --- !u!1 &1258477204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3232,7 @@ GameObject:
   - component: {fileID: 1514459973}
   - component: {fileID: 1514459975}
   - component: {fileID: 1514459974}
+  - component: {fileID: 1514459976}
   m_Layer: 5
   m_Name: melee
   m_TagString: Untagged
@@ -3178,6 +3298,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514459972}
   m_CullTransparentMesh: 1
+--- !u!114 &1514459976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514459972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e78c59fcbcf58246b23ff65ed95a673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: melee
 --- !u!1 &1540179394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3468,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3766c92dcb05545439f9b15e3f5f81b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f51b06d1745d4e4fa3925a0e942dc2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3572,6 +3705,7 @@ GameObject:
   - component: {fileID: 1739530713}
   - component: {fileID: 1739530715}
   - component: {fileID: 1739530714}
+  - component: {fileID: 1739530716}
   m_Layer: 5
   m_Name: Panel bottom
   m_TagString: Untagged
@@ -3641,6 +3775,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739530712}
   m_CullTransparentMesh: 1
+--- !u!114 &1739530716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739530712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dcac448738ae44984dad1c814188a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeImage: {fileID: 1514459974}
+  rangeImage: {fileID: 250185062}
+  tankImage: {fileID: 957264021}
+  healerImage: {fileID: 1249217266}
+  meleeCost: {fileID: 1121359211}
+  rangeCost: {fileID: 1809580247}
+  tankCost: {fileID: 1745811314}
+  healerCost: {fileID: 564522464}
+  queue1: {fileID: 2001767192}
+  queue2: {fileID: 863671552}
+  queue3: {fileID: 670202264}
+  queue4: {fileID: 773327974}
+  queue5: {fileID: 1867872114}
 --- !u!1 &1745811312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,7 +4593,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3766c92dcb05545439f9b15e3f5f81b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f51b06d1745d4e4fa3925a0e942dc2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4606,6 +4765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920524156}
   - component: {fileID: 1920524155}
+  - component: {fileID: 1920524157}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -4631,6 +4791,27 @@ MonoBehaviour:
   enemyLeaderSprite: {fileID: 0}
   winScreen: {fileID: 1685541228}
   loseScreen: {fileID: 1287502411}
+  playerGold: 0
+  enemyGold: 0
+  playerMeleeCost: 0
+  playerRangeCost: 0
+  playerTankCost: 0
+  playerHealerCost: 0
+  enemyMeleeCost: 0
+  enemyRangeCost: 0
+  enemyTankCost: 0
+  enemyHealerCost: 0
+  playerMeleeCooldown: 0
+  playerRangeCooldown: 0
+  playerTankCooldown: 0
+  playerHealerCooldown: 0
+  enemyMeleeCooldown: 0
+  enemyRangeCooldown: 0
+  enemyTankCooldown: 0
+  enemyHealerCooldown: 0
+  playerSpawner: {fileID: 0}
+  enemySpawner: {fileID: 0}
+  unitSpawnQueue: {fileID: 0}
 --- !u!4 &1920524156
 Transform:
   m_ObjectHideFlags: 0
@@ -4643,9 +4824,25 @@ Transform:
   m_LocalPosition: {x: -0.25, y: 0.9000001, z: -10.176849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 908882637}
+  - {fileID: 706231852}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920524157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920524154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e5e083fe3f7b478be1f9803b59fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splashArts: []
+  emptySprite: {fileID: 21300000, guid: 143dcb5ccae52db43a574360502b223e, type: 3}
 --- !u!1 &1968751508
 GameObject:
   m_ObjectHideFlags: 0
