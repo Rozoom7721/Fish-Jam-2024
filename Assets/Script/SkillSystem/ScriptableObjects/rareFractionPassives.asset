@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4e95086a1da4ef46af765aa7d43415c, type: 3}
-  m_Name: guanoFractionPassives
+  m_Name: rareFractionPassives
   m_EditorClassIdentifier: 
-  basePassiveGoldIncome: 23
-  baseGoldIncomeForUnit: 8
-  baseUnitHealthPoints: 400
-  baseLeaderHealthPoints: 8000
-  baseCooldownOfSkills: 2
-  baseUnitAttackSpeed: 2
-  baseUnitDamage: 50
-  baseUnitCriticalHitChance: 0.05
+  basePassiveGoldIncome: 20
+  baseGoldIncomeForUnit: 10
+  baseUnitHealthPoints: 550
+  baseLeaderHealthPoints: 11000
+  baseCooldownOfSkills: 2.1
+  baseUnitAttackSpeed: 1
+  baseUnitDamage: 115
+  baseUnitCriticalHitChance: 0.1

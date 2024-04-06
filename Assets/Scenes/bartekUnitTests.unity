@@ -582,6 +582,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 848374231578993525, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b4ca49f369ed02418101cdc0fac1e6d, type: 3}
     - target: {fileID: 1158744308245729618, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -606,6 +610,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1407673491783455392, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ca6d9da8cd982479dc47038356de33, type: 3}
     - target: {fileID: 1733713114460845407, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: id
       value: player_tank
@@ -798,6 +806,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4216686668561526268, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9148e1ea5b3dc93419e7831ee0da70fc, type: 3}
     - target: {fileID: 4632545458954845574, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -958,6 +970,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7705277765601485901, guid: 400170f5861414f43840f558f629beb3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ee153d4132c06442bda648ec82272d4, type: 3}
     - target: {fileID: 8044110773265271732, guid: 400170f5861414f43840f558f629beb3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

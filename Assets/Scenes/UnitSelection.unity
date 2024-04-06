@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowedItemType: Range
   idSlot: 1
+  playerFraction: {fileID: 0}
 --- !u!1001 &698437347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2075,6 +2076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowedItemType: Healer
   idSlot: 3
+  playerFraction: {fileID: 0}
 --- !u!1 &931830286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,6 +2398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowedItemType: Tank
   idSlot: 2
+  playerFraction: {fileID: 0}
 --- !u!1 &1031487979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,6 +3710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowedItemType: Melee
   idSlot: 0
+  playerFraction: {fileID: 0}
 --- !u!1 &1561412838
 GameObject:
   m_ObjectHideFlags: 0
