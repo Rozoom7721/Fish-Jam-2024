@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4718286238ad49a8ae5ce26392039, type: 3}
   m_Name: playerFractionSkills
   m_EditorClassIdentifier: 
+
   passiveGoldIncome: 1
   goldIncomeForUnit: 1
   unitHealthPoints: 1
