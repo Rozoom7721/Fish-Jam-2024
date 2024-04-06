@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b4718286238ad49a8ae5ce26392039, type: 3}
   m_Name: T2_guanoSkills
   m_EditorClassIdentifier: 
-  passiveGoldIncome: 0
-  goldIncomeForUnit: 0
-  unitHealthPoints: 0
-  leaderHealthPoints: 0
-  cooldownOfSkills: 0
-  unitAttackSpeed: 0
-  unitDamage: 0
-  unitCriticalHitChance: 0
+  passiveGoldIncome: 1
+  goldIncomeForUnit: 1
+  unitHealthPoints: 1
+  leaderHealthPoints: 1
+  cooldownOfSkills: 1
+  unitAttackSpeed: 1
+  unitDamage: 1
+  unitCriticalHitChance: 1

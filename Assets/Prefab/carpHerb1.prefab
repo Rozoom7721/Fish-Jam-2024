@@ -77,7 +77,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.078, y: -1.062, z: 0.033859856}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.055875, y: 1.6894, z: 1.6894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1304498248045769022}
@@ -224,18 +224,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fractionName: 
-  fractionPassives: {fileID: 0}
-  fractionSkills: {fileID: 0}
-  skillTier: 0
+  fractionPassives: {fileID: 11400000, guid: 15ae68a819255c545961be5e8782a3dc, type: 2}
+  fractionSkills: {fileID: 11400000, guid: e146ecad213d40947ad65eab6d9f8a22, type: 2}
+  skillTier: 1
   bigPoints: 0
   smallPoints: 0
-  availbleUnits: []
-  meleeUnit: {fileID: 0}
-  rangeUnit: {fileID: 0}
-  tankUnit: {fileID: 0}
-  healerUnit: {fileID: 0}
+  availbleUnits:
+  - {fileID: 11400000, guid: 9318029aa3f352f40af9dd9b03c36c8c, type: 2}
+  - {fileID: 11400000, guid: 52f9e1f93c2c82048abd1b008e35da72, type: 2}
+  - {fileID: 11400000, guid: 7c077016f09c5d44cbfa2b7b498050ed, type: 2}
+  - {fileID: 11400000, guid: da4ee0889e2068d4cb345d58a1b6aa90, type: 2}
+  meleeUnit: {fileID: 11400000, guid: 9318029aa3f352f40af9dd9b03c36c8c, type: 2}
+  rangeUnit: {fileID: 11400000, guid: 52f9e1f93c2c82048abd1b008e35da72, type: 2}
+  tankUnit: {fileID: 11400000, guid: 7c077016f09c5d44cbfa2b7b498050ed, type: 2}
+  healerUnit: {fileID: 11400000, guid: da4ee0889e2068d4cb345d58a1b6aa90, type: 2}
   meleePrefab: {fileID: 0}
   rangePrefab: {fileID: 0}
   tankPrefab: {fileID: 0}
   healerPrefab: {fileID: 0}
-  all_unit_types: []
+  all_unit_types:
+  - {fileID: 11400000, guid: 9318029aa3f352f40af9dd9b03c36c8c, type: 2}
+  - {fileID: 11400000, guid: 52f9e1f93c2c82048abd1b008e35da72, type: 2}
+  - {fileID: 11400000, guid: 7c077016f09c5d44cbfa2b7b498050ed, type: 2}
+  - {fileID: 11400000, guid: da4ee0889e2068d4cb345d58a1b6aa90, type: 2}

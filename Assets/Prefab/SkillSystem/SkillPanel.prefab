@@ -92,6 +92,9 @@ MonoBehaviour:
   playerFraction: {fileID: 0}
   skillID: 
   skillTier: 0
+  locked: {fileID: 21300000, guid: 143dcb5ccae52db43a574360502b223e, type: 3}
+  unlocked: {fileID: 21300000, guid: e64527be4862168439da684b2326ab44, type: 3}
+  icon: {fileID: 3968738351547312261}
 --- !u!1 &8255857468255541100
 GameObject:
   m_ObjectHideFlags: 0

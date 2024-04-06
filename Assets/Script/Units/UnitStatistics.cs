@@ -83,10 +83,10 @@ public class UnitStatistics : MonoBehaviour
         CalculateAtackSpeed();
         CalculateGoldIncome();
         CalculateCost();
+        CalculateCooldown();
 
         unitCriticalHitChance = unitStats.unitCriticalHitChance;
         unitRange = unitStats.unitRange;
-        unitCooldown= unitStats.unitCooldown;  
         unitMovementSpeed=unitStats.unitMovementSpeed;
         unitCostInSeconds=unitStats.unitCostInSeconds;
         unitGoldMultiplier = unitStats.unitGoldMultiplier;
@@ -97,6 +97,12 @@ public class UnitStatistics : MonoBehaviour
       unitHealthPoints = (fractionPassives.baseUnitHealthPoints + unitStats.unitHealthPoints) * Mathf.Pow(10, fraction.skillTier * 3);
 
     }
+
+    private void CalculateCooldown()
+    {
+        unitCooldown = unitStats.unitCooldown + fractionPassives.baseCooldownOfSkills;
+    }
+
     private void CalculateDamage()
     {
         unitDamage = (fractionPassives.baseUnitDamage+unitStats.unitDamage) * Mathf.Pow(10, fraction.skillTier * 3);

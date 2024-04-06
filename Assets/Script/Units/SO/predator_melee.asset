@@ -23,5 +23,5 @@ MonoBehaviour:
   unitRange: 1
   unitId: predator_melee
   unitIsHealer: 0
-  unitSprite: {fileID: 0}
-  unitSplashArt: {fileID: 0}
+  unitSprite: {fileID: 21300000, guid: 4d825d3f47a7c734e9ecf3d3498ebd5d, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 6936a1fc877f8dc4d941cea55d529fe9, type: 3}

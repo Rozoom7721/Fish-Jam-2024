@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed47a31c3fd32cc45b13e588d62340e4, type: 3}
+  m_Name: guano_tank
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  unitHealthPoints: 300
+  unitDamage: 125
+  unitAttackSpeed: -1
+  unitCriticalHitChance: 0.05
+  unitCooldown: 6.5
+  unitMovementSpeed: 0.8
+  unitGoldMultiplier: 1.8
+  unitCostInSeconds: 12
+  unitRange: 1
+  unitId: guano_tank
+  unitIsHealer: 0
+  unitSprite: {fileID: 21300000, guid: 5bcdf4089cac4414cb0877180f1cf192, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 1b5dc0fe18caf65489a0179a6a4bc968, type: 3}

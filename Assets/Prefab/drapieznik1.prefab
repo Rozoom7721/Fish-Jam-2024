@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.57308406, y: -1.0196487, z: 0.033859856}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.055875, y: 1.6894, z: 1.6894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2976511712983477187}
@@ -162,10 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420d57fd60c610340aed7710bf190d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit1: {fileID: 21300000, guid: 55364f2d79b0f434e89c1fdc1013e80f, type: 3}
-  unit2: {fileID: 21300000, guid: 55364f2d79b0f434e89c1fdc1013e80f, type: 3}
-  unit3: {fileID: 21300000, guid: 55364f2d79b0f434e89c1fdc1013e80f, type: 3}
-  unit4: {fileID: 21300000, guid: 55364f2d79b0f434e89c1fdc1013e80f, type: 3}
   herb: {fileID: 21300000, guid: 2ed60c3fd9225034fa70468d7abcd732, type: 3}
   menuFraction: {fileID: 0}
   map: {fileID: 0}
@@ -187,16 +183,24 @@ MonoBehaviour:
   skillTier: 0
   bigPoints: 0
   smallPoints: 0
-  availbleUnits: []
-  meleeUnit: {fileID: 0}
-  rangeUnit: {fileID: 0}
-  tankUnit: {fileID: 0}
-  healerUnit: {fileID: 0}
+  availbleUnits:
+  - {fileID: 11400000, guid: b2d5a144a93b6d941a1dc1ee16e2ecc2, type: 2}
+  - {fileID: 11400000, guid: 88b4d2815f82635479ce8648fc3639b5, type: 2}
+  - {fileID: 11400000, guid: a89024269976d1343bbd9ba4849113ff, type: 2}
+  - {fileID: 11400000, guid: 9362c5f1bc3f4f44bac977ea98915124, type: 2}
+  meleeUnit: {fileID: 11400000, guid: b2d5a144a93b6d941a1dc1ee16e2ecc2, type: 2}
+  rangeUnit: {fileID: 11400000, guid: 88b4d2815f82635479ce8648fc3639b5, type: 2}
+  tankUnit: {fileID: 11400000, guid: a89024269976d1343bbd9ba4849113ff, type: 2}
+  healerUnit: {fileID: 11400000, guid: 9362c5f1bc3f4f44bac977ea98915124, type: 2}
   meleePrefab: {fileID: 0}
   rangePrefab: {fileID: 0}
   tankPrefab: {fileID: 0}
   healerPrefab: {fileID: 0}
-  all_unit_types: []
+  all_unit_types:
+  - {fileID: 11400000, guid: b2d5a144a93b6d941a1dc1ee16e2ecc2, type: 2}
+  - {fileID: 11400000, guid: 88b4d2815f82635479ce8648fc3639b5, type: 2}
+  - {fileID: 11400000, guid: a89024269976d1343bbd9ba4849113ff, type: 2}
+  - {fileID: 11400000, guid: 9362c5f1bc3f4f44bac977ea98915124, type: 2}
 --- !u!1 &3325158267895646050
 GameObject:
   m_ObjectHideFlags: 0

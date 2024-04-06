@@ -2552,6 +2552,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2770097263627996173}
     m_Modifications:
     - target: {fileID: 1317868367222486723, guid: 689df3bfd52e6fb43953993895d0275d, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 8246822723790594730}
+    - target: {fileID: 1317868367222486723, guid: 689df3bfd52e6fb43953993895d0275d, type: 3}
       propertyPath: skillID
       value: passiveGoldIncome
       objectReference: {fileID: 0}
@@ -2653,6 +2657,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8124582150999667771, guid: 689df3bfd52e6fb43953993895d0275d, type: 3}
   m_PrefabInstance: {fileID: 4999368398188710447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8246822723790594730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3968738351547312261, guid: 689df3bfd52e6fb43953993895d0275d, type: 3}
+  m_PrefabInstance: {fileID: 4999368398188710447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5358696839862628478
 PrefabInstance:
   m_ObjectHideFlags: 0
