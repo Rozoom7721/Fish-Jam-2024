@@ -41,7 +41,6 @@ public class UnitSelection : MonoBehaviour,  IBeginDragHandler, IEndDragHandler,
         }
 
 
-        Debug.LogWarning("Fix me!");
         foreach (UnitStats unit in playerFraction.availbleUnits)
         {
             if (unit == unitStats)
