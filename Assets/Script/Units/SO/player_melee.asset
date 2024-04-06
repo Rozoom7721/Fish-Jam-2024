@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: player_melee
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitHealthPoints: 0
-  unitDamage: 0
+  unitDamage: 20
   unitAttackSpeed: 0
   unitCriticalHitChance: 0
   unitCooldown: 0
-  unitMovementSpeed: 0
-  unitGoldMultiplier: 0
-  unitCostInSeconds: 0
-  unitRange: 0
+  unitMovementSpeed: 1
+  unitGoldMultiplier: 1
+  unitCostInSeconds: 3
+  unitRange: 1
   unitId: player_melee
   unitIsHealer: 0

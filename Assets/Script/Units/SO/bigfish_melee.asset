@@ -9,17 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: player_range
-  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
-  unitHealthPoints: -125
+  m_Script: {fileID: 11500000, guid: ed47a31c3fd32cc45b13e588d62340e4, type: 3}
+  m_Name: bigfish_melee
+  m_EditorClassIdentifier: 
+  unitHealthPoints: 0
   unitDamage: 20
-  unitAttackSpeed: 0.3
+  unitAttackSpeed: -0.2
   unitCriticalHitChance: 0
-  unitCooldown: 1
+  unitCooldown: 0
   unitMovementSpeed: 1
-  unitGoldMultiplier: 1.3
-  unitCostInSeconds: 5
-  unitRange: 3
-  unitId: player_range
+  unitGoldMultiplier: 1.2
+  unitCostInSeconds: 3
+  unitRange: 1
+  unitId: bigfish_melee
   unitIsHealer: 0
+  unitSprite: {fileID: 0}
+  unitSplashArt: {fileID: 0}

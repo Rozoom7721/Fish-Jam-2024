@@ -16,10 +16,12 @@ MonoBehaviour:
   unitDamage: 0
   unitAttackSpeed: 0
   unitCriticalHitChance: 0
-  unitCooldown: 0
-  unitMovementSpeed: 0
-  unitGoldMultiplier: 0
-  unitCostInSeconds: 0
-  unitRange: 0
+  unitCooldown: 2
+  unitMovementSpeed: 1.2
+  unitGoldMultiplier: 1
+  unitCostInSeconds: 3
+  unitRange: 1
   unitId: guano_melee
   unitIsHealer: 0
+  unitSprite: {fileID: 0}
+  unitSplashArt: {fileID: 0}
