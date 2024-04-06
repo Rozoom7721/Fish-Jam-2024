@@ -22,10 +22,7 @@ MonoBehaviour:
   unitCostInSeconds: 6
   unitRange: 1
   unitId: player_healer
-<<<<<<< HEAD
-  unitIsHealer: 0
+  unitIsHealer: 1
   unitSprite: {fileID: 21300000, guid: 829442d88b019f342b6b60b8d9e3916c, type: 3}
   unitSplashArt: {fileID: 21300000, guid: 0ee153d4132c06442bda648ec82272d4, type: 3}
-=======
-  unitIsHealer: 1
->>>>>>> fe353ae1a44f75f3cc3c59193d2593dd41c6effd
+
