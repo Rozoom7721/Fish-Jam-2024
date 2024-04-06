@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 1236452442286223285}
   - component: {fileID: 3702423800294029713}
   - component: {fileID: 6310207344972320421}
+  - component: {fileID: 8520394232559983099}
   m_Layer: 0
   m_Name: carpHerb1
   m_TagString: Untagged
@@ -162,10 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420d57fd60c610340aed7710bf190d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit1: {fileID: 21300000, guid: 36aed4259fc44654685e411d7ed1f293, type: 3}
-  unit2: {fileID: 21300000, guid: 52f3b9a616366f04687cf172db1a106c, type: 3}
-  unit3: {fileID: 21300000, guid: 52f3b9a616366f04687cf172db1a106c, type: 3}
-  unit4: {fileID: 21300000, guid: 36aed4259fc44654685e411d7ed1f293, type: 3}
   herb: {fileID: 21300000, guid: 36aed4259fc44654685e411d7ed1f293, type: 3}
   menuFraction: {fileID: 0}
   map: {fileID: 0}
@@ -214,3 +211,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41475558, y: 0.6733695}
   m_EdgeRadius: 0
+--- !u!114 &8520394232559983099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877052182837730472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34db9b7088ab28949ad0d4e726e5dbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fractionName: 
+  fractionPassives: {fileID: 0}
+  fractionSkills: {fileID: 0}
+  skillTier: 0
+  bigPoints: 0
+  smallPoints: 0
+  availbleUnits: []
+  meleeUnit: {fileID: 0}
+  rangeUnit: {fileID: 0}
+  tankUnit: {fileID: 0}
+  healerUnit: {fileID: 0}
+  meleePrefab: {fileID: 0}
+  rangePrefab: {fileID: 0}
+  tankPrefab: {fileID: 0}
+  healerPrefab: {fileID: 0}
+  all_unit_types: []

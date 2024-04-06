@@ -18,7 +18,8 @@ public class UnitStats : ScriptableObject
     public string unitId;
     public bool unitIsHealer;
 
-
+    public Sprite unitSprite;
+    public Sprite unitSplashArt;
 
 
 }

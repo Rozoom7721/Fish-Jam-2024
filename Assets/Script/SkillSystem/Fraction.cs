@@ -260,6 +260,34 @@ public class Fraction : MonoBehaviour
     }
 
 
+    public void unselectUnit(string unitId)
+    {
+        if(meleeUnit.unitId == unitId)
+        {
+            meleeUnit = null;
+            return;
+        }
+
+        if (rangeUnit.unitId == unitId)
+        {
+            rangeUnit = null;
+            return;
+        }
+
+        if (tankUnit.unitId == unitId)
+        {
+            tankUnit = null;
+            return;
+        }
+
+        if (healerUnit.unitId == unitId)
+        {
+            healerUnit = null;
+            return;
+        }
+
+    }
+
     public void spawnUnit(string unitType)
     {
         switch (unitType)
@@ -267,26 +295,26 @@ public class Fraction : MonoBehaviour
 
             case "melee":
             {
-                // instantiate melee in fight system, unit.init() must be called right after instantiate
-                break;
+                    // instantiate melee in fight system, unit.init(this) must be called right after instantiate
+                    break;
             }
 
             case "range":
                 {
-                    // instantiate range in fight system, unit.init() must be called right after instantiate
+                    // instantiate range in fight system, unit.init(this) must be called right after instantiate
                     break;
                 }
 
 
             case "tank":
                 {
-                    // instantiate tank in fight system, unit.init() must be called right after instantiate
+                    // instantiate tank in fight system, unit.init(this) must be called right after instantiate
                     break;
                 }
 
             case "healer":
                 {
-                    // instantiate healer in fight system, unit.init() must be called right after instantiate
+                    // instantiate healer in fight system, unit.init(this) must be called right after instantiate
                     break;
                 }
         }

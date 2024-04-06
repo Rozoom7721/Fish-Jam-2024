@@ -20,8 +20,9 @@ public class UnitStatistics : MonoBehaviour
     public UnitStats unitStats;
     public Fraction fraction;
 
-    public void init()
+    public void init(Fraction fractionData)
     {
+        fraction = fractionData;
         if (fraction==null)
         {
             fraction = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();

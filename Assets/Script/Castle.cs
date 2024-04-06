@@ -6,15 +6,29 @@ using UnityEngine.UI;
 
 public class Castle : MonoBehaviour
 {
-    public Sprite unit1;
-    public Sprite unit2;
-    public Sprite unit3;
-    public Sprite unit4;
+    private Sprite unit1;
+    private Sprite unit2;
+    private Sprite unit3;
+    private Sprite unit4;
     public Sprite herb;
     public MenuFraction menuFraction;
     public GameObject map;
 
-    
+    private Fraction fraction;
+
+
+    private void Start()
+    {
+
+        fraction = GetComponent<Fraction>();
+
+        unit1 = fraction.meleeUnit.unitSplashArt;
+        unit2 = fraction.rangeUnit.unitSplashArt;
+        unit3 = fraction.tankUnit.unitSplashArt;
+        unit4 = fraction.healerUnit.unitSplashArt;
+
+    }
+
 
     public void SpriteChange()
     {

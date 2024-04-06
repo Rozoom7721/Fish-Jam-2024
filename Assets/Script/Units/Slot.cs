@@ -7,6 +7,15 @@ public class Slot : MonoBehaviour, IDropHandler
 {
     public string allowedItemType;
 
+    [SerializeField]
+    private Fraction playerFraction;
+
+    private void Start()
+    {
+        playerFraction = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
+        if (!playerFraction) throw new System.Exception("Missing player fraction object!");
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
 
@@ -17,6 +26,7 @@ public class Slot : MonoBehaviour, IDropHandler
            // draggableItem.parentAfterDrag = transform;
             if (draggableItem != null && draggableItem.tag == allowedItemType)
             {
+                playerFraction.unselectUnit(draggableItem.id);
                 draggableItem.parentAfterDrag = transform; 
             }
 

@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 970342816752216053}
   - component: {fileID: 4523205817266666985}
   - component: {fileID: 7468432884142130861}
+  - component: {fileID: 3502944023671675194}
   m_Layer: 0
   m_Name: zarlokHerb1
   m_TagString: Untagged
@@ -207,10 +208,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420d57fd60c610340aed7710bf190d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit1: {fileID: 21300000, guid: 0942b73baa9bf264ba69df8d5903da33, type: 3}
-  unit2: {fileID: 21300000, guid: 4a0a7559faa46c24688ec708c0aaec1f, type: 3}
-  unit3: {fileID: 21300000, guid: e8e7fee0d0d16a44d995e40684fbe8fc, type: 3}
-  unit4: {fileID: 21300000, guid: bd5a96cc46403ed43b8e8bb30fbcd32b, type: 3}
   herb: {fileID: 21300000, guid: c0fb8beb955d8aa4ca849e3402a122fd, type: 3}
   menuFraction: {fileID: 0}
   map: {fileID: 0}
+--- !u!114 &3502944023671675194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482932304036498117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34db9b7088ab28949ad0d4e726e5dbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fractionName: 
+  fractionPassives: {fileID: 0}
+  fractionSkills: {fileID: 0}
+  skillTier: 0
+  bigPoints: 0
+  smallPoints: 0
+  availbleUnits: []
+  meleeUnit: {fileID: 0}
+  rangeUnit: {fileID: 0}
+  tankUnit: {fileID: 0}
+  healerUnit: {fileID: 0}
+  meleePrefab: {fileID: 0}
+  rangePrefab: {fileID: 0}
+  tankPrefab: {fileID: 0}
+  healerPrefab: {fileID: 0}
+  all_unit_types: []

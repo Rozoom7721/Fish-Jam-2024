@@ -50,3 +50,25 @@ MonoBehaviour:
   skillTier: 1
   bigPoints: 0
   smallPoints: 0
+  availbleUnits:
+  - {fileID: 11400000, guid: ea5a4326d5515294ca3d0135e4af781c, type: 2}
+  - {fileID: 11400000, guid: 67642ac991de86942a3bd179eb3f15d4, type: 2}
+  - {fileID: 11400000, guid: c3dcfad70d88f27498cd3face25b0592, type: 2}
+  - {fileID: 11400000, guid: 5a96a7aaaa43fc846be9e85b196f42ae, type: 2}
+  meleeUnit: {fileID: 0}
+  rangeUnit: {fileID: 0}
+  tankUnit: {fileID: 0}
+  healerUnit: {fileID: 0}
+  meleePrefab: {fileID: 0}
+  rangePrefab: {fileID: 0}
+  tankPrefab: {fileID: 0}
+  healerPrefab: {fileID: 0}
+  all_unit_types:
+  - {fileID: 11400000, guid: c3dcfad70d88f27498cd3face25b0592, type: 2}
+  - {fileID: 11400000, guid: 67642ac991de86942a3bd179eb3f15d4, type: 2}
+  - {fileID: 11400000, guid: ea5a4326d5515294ca3d0135e4af781c, type: 2}
+  - {fileID: 11400000, guid: 5a96a7aaaa43fc846be9e85b196f42ae, type: 2}
+  - {fileID: 11400000, guid: 3ce4b8f76930fce42a0aab3400073754, type: 2}
+  - {fileID: 11400000, guid: 1029d1c938def9f45bb3b358a941ff13, type: 2}
+  - {fileID: 11400000, guid: 64f7106aa9c019145b2ed4cf8b673b2d, type: 2}
+  - {fileID: 11400000, guid: af35f10fa9270fa46916085c667748a8, type: 2}

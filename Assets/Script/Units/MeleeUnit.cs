@@ -10,9 +10,9 @@ public class MeleeUnit : MonoBehaviour, IUnit
     public UnitStatistics Stats { get ; set; }
     public double CurrentHealthPoints { get ; set; }
 
-    public void init()
+    public void init(Fraction fraction)
     {
-        Stats.init();
+        Stats.init(fraction);
     }
 
     public void Attack(IUnit otherUnit)
