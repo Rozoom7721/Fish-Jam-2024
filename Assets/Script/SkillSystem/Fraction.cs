@@ -11,7 +11,7 @@ public class Fraction : MonoBehaviour
 
     public FractionPassives fractionPassives;
     public FractionSkills fractionSkills;
-    private FractionStatistics fractionStatistics;
+    public FractionStatistics fractionStatistics;
     public int skillTier;
     public int bigPoints;
     public int smallPoints;
