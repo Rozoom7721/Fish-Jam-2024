@@ -23,3 +23,5 @@ MonoBehaviour:
   unitRange: 0
   unitId: guano_range
   unitIsHealer: 0
+  unitSprite: {fileID: 21300000, guid: a8c81159d0220e147aa1660468ccec26, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: d7b1b24d9be4b2245b9a5e032c0f8380, type: 3}

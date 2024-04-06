@@ -94,12 +94,12 @@ public class UnitStatistics : MonoBehaviour
     }
     private void CalculateHealthPoints()
     {
-      unitHealthPoints = (fractionPassives.baseUnitHealthPoints + unitStats.unitHealthPoints) * Mathf.Pow(10, fractionSkills.unitHealthPoints * 3);
+      unitHealthPoints = (fractionPassives.baseUnitHealthPoints + unitStats.unitHealthPoints) * Mathf.Pow(10, fraction.skillTier * 3);
 
     }
     private void CalculateDamage()
     {
-        unitDamage = (fractionPassives.baseUnitDamage+unitStats.unitDamage) * Mathf.Pow(10, fractionSkills.unitDamage * 3);
+        unitDamage = (fractionPassives.baseUnitDamage+unitStats.unitDamage) * Mathf.Pow(10, fraction.skillTier * 3);
     }
     private void CalculateAtackSpeed()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fraction : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class Fraction : MonoBehaviour
     public List<UnitStats> all_unit_types;
 
 
+
+    private bool shouldNotify;
     private List<ISkillOnClickListener> skillOnClickListeners;
     public void addSkillOnClickListener(ISkillOnClickListener listener)
     {
@@ -38,16 +41,22 @@ public class Fraction : MonoBehaviour
     }
     private void notifySkillOnClickListeners()
     {
+        if (shouldNotify == false) return;
+
         foreach(ISkillOnClickListener listener in skillOnClickListeners)
         {
-            listener.onSkillOnClick();
+            if(listener != null)
+            {
+                listener.onSkillOnClick();
+
+            }
         }
     }
 
     private void Awake()
     {
-        skillOnClickListeners = new List<ISkillOnClickListener>();
-        fractionStatistics = gameObject.AddComponent<FractionStatistics>();
+/*        skillOnClickListeners = new List<ISkillOnClickListener>();*/
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -55,14 +64,47 @@ public class Fraction : MonoBehaviour
         RecalculateStatistits();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(fractionStatistics == null) fractionStatistics = gameObject.AddComponent<FractionStatistics>();
+
+        if (scene.name == "SampleScene")
+        {
+            if (skillOnClickListeners != null)
+            {
+                skillOnClickListeners = null;
+                shouldNotify = false;
+            }
+
+        }
+        else
+        {
+            skillOnClickListeners = new List<ISkillOnClickListener>();
+            shouldNotify = true;
+        }
+
+
+        RecalculateStatistits();
+    }
+
 
     public void RecalculateStatistits()
     {
+        updateSkillTier();
         CalculateGoldIncome();
         CalculateHealthPoints();
         CalculateCooldown();
         CalculateDamage();
-        updateSkillTier();
         
         
         notifySkillOnClickListeners();
@@ -76,8 +118,8 @@ public class Fraction : MonoBehaviour
 
     private void CalculateHealthPoints()
     {
-        fractionStatistics.unitHealthPoints = fractionPassives.baseUnitHealthPoints * Mathf.Pow(10, fractionSkills.unitHealthPoints * 3);
-        fractionStatistics.leaderHealthPoints = fractionPassives.baseLeaderHealthPoints *  Mathf.Pow(10, fractionSkills.leaderHealthPoints * 3);
+        fractionStatistics.unitHealthPoints = fractionPassives.baseUnitHealthPoints * Mathf.Pow(10, skillTier * 3);
+        fractionStatistics.leaderHealthPoints = fractionPassives.baseLeaderHealthPoints *  Mathf.Pow(10, skillTier * 3);
     }
 
     private void CalculateCooldown()
@@ -88,7 +130,7 @@ public class Fraction : MonoBehaviour
 
     private void CalculateDamage()
     {
-        fractionStatistics.unitDamage = fractionPassives.baseUnitDamage * Mathf.Pow(10, fractionSkills.unitDamage * 3);
+        fractionStatistics.unitDamage = fractionPassives.baseUnitDamage * Mathf.Pow(10, skillTier * 3);
         fractionStatistics.unitCriticalHitChance = fractionPassives.baseUnitCriticalHitChance * fractionSkills.unitCriticalHitChance;
     }
 
@@ -321,6 +363,29 @@ public class Fraction : MonoBehaviour
 
     }
 
+    public void CopyFrom(Fraction other)
+    {
+        fractionName = other.fractionName;
+        fractionPassives = other.fractionPassives;
+        fractionSkills = other.fractionSkills;
+        fractionStatistics = other.fractionStatistics;
+        skillTier = other.skillTier;
+        bigPoints = other.bigPoints;
+        smallPoints = other.smallPoints;
 
+        availbleUnits = new List<UnitStats>(other.availbleUnits);
+
+        meleeUnit = other.meleeUnit;
+        rangeUnit = other.rangeUnit;
+        tankUnit = other.tankUnit;
+        healerUnit = other.healerUnit;
+
+        meleePrefab = other.meleePrefab;
+        rangePrefab = other.rangePrefab;
+        tankPrefab = other.tankPrefab;
+        healerPrefab = other.healerPrefab;
+
+        all_unit_types = new List<UnitStats>(other.all_unit_types);
+    }
 
 }

@@ -23,3 +23,5 @@ MonoBehaviour:
   unitRange: 0
   unitId: player_range
   unitIsHealer: 0
+  unitSprite: {fileID: 21300000, guid: 628f5fc775148b3409416043d1285d64, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 5b4ca49f369ed02418101cdc0fac1e6d, type: 3}

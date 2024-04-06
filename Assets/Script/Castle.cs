@@ -14,18 +14,18 @@ public class Castle : MonoBehaviour
     public MenuFraction menuFraction;
     public GameObject map;
 
-    private Fraction fraction;
+    private Fraction enemyFraction;
 
 
     private void Start()
     {
 
-        fraction = GetComponent<Fraction>();
+        enemyFraction = GetComponent<Fraction>();
 
-        unit1 = fraction.meleeUnit.unitSplashArt;
-        unit2 = fraction.rangeUnit.unitSplashArt;
-        unit3 = fraction.tankUnit.unitSplashArt;
-        unit4 = fraction.healerUnit.unitSplashArt;
+        unit1 = enemyFraction.meleeUnit.unitSplashArt;
+        unit2 = enemyFraction.rangeUnit.unitSplashArt;
+        unit3 = enemyFraction.tankUnit.unitSplashArt;
+        unit4 = enemyFraction.healerUnit.unitSplashArt;
 
     }
 
@@ -33,6 +33,7 @@ public class Castle : MonoBehaviour
     public void SpriteChange()
     {
         menuFraction.gameObject.SetActive(true);
+        menuFraction.enemyFraction = enemyFraction;
         map.SetActive(false);
         
         menuFraction.unit1.sprite = unit1;
