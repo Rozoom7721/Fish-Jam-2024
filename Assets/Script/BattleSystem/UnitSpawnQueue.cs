@@ -62,12 +62,12 @@ public class UnitSpawnQueue : MonoBehaviour
             yield return new WaitForSeconds((float)cooldown);
 
             Debug.Log("Tworzenie jednostki: " + unitType);
-            battleSystem.spawnUnit(unitType);
+            battleSystem.spawnUnit(unitType, true);
             queue.Dequeue();
             splashArts.RemoveAt(0);
 
             // Aktualizuj splash arty, jeœli kolejka nie jest pusta
-            if (queue.Count > 0)
+            if (splashArts.Count > 0)
             {
                 int index = 0;
                 while (index < queue.Count)

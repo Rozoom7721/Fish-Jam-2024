@@ -6,6 +6,9 @@ public interface IUnit
 {
     double CurrentHealthPoints { get; set; }
     UnitStatistics Stats { get; set; }
+    bool IsMoving { get; set; }
+    bool IsAttacking{ get; set; }
+
 
 
     void Attack(IUnit otherUnit)

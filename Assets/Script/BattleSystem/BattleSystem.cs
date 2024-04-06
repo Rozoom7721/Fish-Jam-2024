@@ -44,6 +44,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
     public UnitSpawnQueue unitSpawnQueue;
 
+    public string playerUnitsLayer = "PlayerUnits";
+    public string enemyUnitsLayer = "EnemyUnits";
+
 
 
     private void Start()
@@ -173,7 +176,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
                 break;
         }
 
-        if(playerGold > cost)
+        if(playerGold >= cost)
         {
             playerGold -= cost;
             unitSpawnQueue.AddUnit(unitType,splashArt);
@@ -183,33 +186,98 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     }
 
 
-    public void spawnUnit(string unitType)
+    public void spawnUnit(string unitType, bool isPlayer)
     {
+
+        Quaternion rotation = isPlayer ? playerSpawner.transform.rotation : enemySpawner.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
+        Vector3 position = isPlayer ? playerSpawner.transform.position : enemySpawner.transform.position;
+
         switch (unitType)
         {
 
             case "melee":
                 {
-                    // instantiate melee in fight system, unit.init(this) must be called right after instantiate
+                    MeleeUnit unit = Instantiate(playerFraction.meleePrefab, position, rotation).GetComponent<MeleeUnit>();
+
+                    if(isPlayer)
+                    {
+                        unit.gameObject.tag = "PlayerUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(playerUnitsLayer);
+
+                        unit.init(playerFraction, isPlayer);
+                    }
+                    else
+                    {
+                        unit.gameObject.tag = "EnemyUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
+                        unit.init(enemyFraction, isPlayer);
+                    }
+
                     break;
                 }
 
             case "range":
                 {
-                    // instantiate range in fight system, unit.init(this) must be called right after instantiate
+                    RangeUnit unit = Instantiate(playerFraction.rangePrefab, position, rotation).GetComponent<RangeUnit>();
+
+                    if (isPlayer)
+                    {
+                        unit.gameObject.tag = "PlayerUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(playerUnitsLayer);
+                        unit.init(playerFraction, isPlayer);
+
+                    }
+                    else
+                    {
+                        unit.gameObject.tag = "EnemyUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
+
+                        unit.init(enemyFraction, isPlayer);
+                    }
                     break;
                 }
 
 
             case "tank":
                 {
-                    // instantiate tank in fight system, unit.init(this) must be called right after instantiate
+                    TankUnit unit = Instantiate(playerFraction.tankPrefab, position, rotation).GetComponent<TankUnit>();
+
+                    if (isPlayer)
+                    {
+                        unit.gameObject.tag = "PlayerUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(playerUnitsLayer);
+                        unit.init(playerFraction, isPlayer);
+                    }
+                    else
+                    {
+                        unit.gameObject.tag = "EnemyUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
+
+                        unit.init(enemyFraction, isPlayer);
+
+                    }
                     break;
                 }
 
             case "healer":
                 {
-                    // instantiate healer in fight system, unit.init(this) must be called right after instantiate
+                    HealerUnit unit = Instantiate(playerFraction.healerPrefab, position, rotation).GetComponent<HealerUnit>();
+
+                    if (isPlayer)
+                    {
+                        unit.gameObject.tag = "PlayerUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(playerUnitsLayer);
+                        unit.init(playerFraction, isPlayer);
+
+                    }
+                    else
+                    {
+                        unit.gameObject.tag = "EnemyUnit";
+                        unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
+
+                        unit.init(enemyFraction, isPlayer);
+
+                    }
                     break;
                 }
         }

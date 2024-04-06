@@ -47,6 +47,7 @@ MonoBehaviour:
   fractionName: player
   fractionPassives: {fileID: 11400000, guid: 38a2fd2a667abe94da577fc8337a2892, type: 2}
   fractionSkills: {fileID: 11400000, guid: 14f07a988f52bcc44840d06dae08a066, type: 2}
+  fractionStatistics: {fileID: 0}
   skillTier: 1
   bigPoints: 0
   smallPoints: 0
@@ -59,10 +60,10 @@ MonoBehaviour:
   rangeUnit: {fileID: 0}
   tankUnit: {fileID: 0}
   healerUnit: {fileID: 0}
-  meleePrefab: {fileID: 0}
-  rangePrefab: {fileID: 0}
-  tankPrefab: {fileID: 0}
-  healerPrefab: {fileID: 0}
+  meleePrefab: {fileID: 7001022422224173402, guid: ef327d98a68e8304496f93c71593cae9, type: 3}
+  rangePrefab: {fileID: 7511563407033513446, guid: 64868852c3ab165478b32e6121f9ae32, type: 3}
+  tankPrefab: {fileID: 1758037483787353664, guid: c4ed235512fad7447a7683e75b235041, type: 3}
+  healerPrefab: {fileID: 2400415855377711908, guid: a039765dd7c60d142be7c93db6486275, type: 3}
   all_unit_types:
   - {fileID: 11400000, guid: c3dcfad70d88f27498cd3face25b0592, type: 2}
   - {fileID: 11400000, guid: 67642ac991de86942a3bd179eb3f15d4, type: 2}
