@@ -21,9 +21,6 @@ public class UnitToFight : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
 
-        Debug.Log("UnitToFight OnDrop");
-
-
 
         if (transform.childCount == 0)
         {
@@ -36,7 +33,6 @@ public class UnitToFight : MonoBehaviour, IDropHandler
                 if (!isUnitUnlocked(draggableItem.id)) return;
 
                 draggableItem.parentAfterDrag = transform;
-                Debug.Log("UnitToFight.OnDrop:  id = " + draggableItem.id);
                 playerFraction.SelectUnit(draggableItem.id);
             }
 

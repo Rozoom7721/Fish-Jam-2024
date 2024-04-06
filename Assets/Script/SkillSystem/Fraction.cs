@@ -263,8 +263,6 @@ public class Fraction : MonoBehaviour
     public void SelectUnit(string unitID)
     {
 
-        Debug.Log("SelectUnit: " + unitID);
-
         foreach (UnitStats unit in all_unit_types)
         {
             if (unit.unitId == unitID)
