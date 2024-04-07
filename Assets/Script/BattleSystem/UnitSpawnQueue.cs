@@ -9,13 +9,27 @@ public class UnitSpawnQueue : MonoBehaviour
     private Coroutine processingCoroutine;
     private BattleSystem battleSystem;
 
-    public List<Sprite> splashArts = new List<Sprite>(); // Lista splash artów
+    public Queue<Sprite> splashArts = new Queue<Sprite>(); // Lista splash artów
     public Sprite emptySprite;
+
+
+    public bool isPlayer;
+
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            isPlayer = !isPlayer;
+        }
+
+    }
 
 
     private void Start()
     {
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
+        isPlayer = true;
     }
 
     public void AddUnit(string unitType, Sprite unitSplashArt)
@@ -23,7 +37,7 @@ public class UnitSpawnQueue : MonoBehaviour
         if (!full)
         {
             queue.Enqueue(unitType);
-            splashArts.Add(unitSplashArt);
+            splashArts.Enqueue(unitSplashArt);
 
             if (queue.Count == 5)
                 full = true;
@@ -38,7 +52,6 @@ public class UnitSpawnQueue : MonoBehaviour
         while (queue.Count > 0)
         {
             string unitType = queue.Peek();
-            Sprite unitSplashArt = splashArts[0];
 
             double cooldown = 0f;
             switch (unitType)
@@ -62,27 +75,10 @@ public class UnitSpawnQueue : MonoBehaviour
             yield return new WaitForSeconds((float)cooldown);
 
             Debug.Log("Tworzenie jednostki: " + unitType);
-            battleSystem.spawnUnit(unitType, true);
+            battleSystem.spawnUnit(unitType, isPlayer);
             queue.Dequeue();
-            splashArts.RemoveAt(0);
+            splashArts.Dequeue();
 
-            // Aktualizuj splash arty, jeœli kolejka nie jest pusta
-            if (splashArts.Count > 0)
-            {
-                int index = 0;
-                while (index < queue.Count)
-                {
-                    if (index == queue.Count - 1)
-                    {
-                        /*splashArts[index] = emptySprite; // Ustaw pusty splash art na ostatniej pozycji w liœcie*/
-                    }
-                    else
-                    {
-                        splashArts[index] = splashArts[index + 1]; // Przesuñ splash arty w lewo, aby zaktualizowaæ ich pozycje w kolejce
-                    }
-                    index++;
-                }
-            }
 
             full = false;
         }

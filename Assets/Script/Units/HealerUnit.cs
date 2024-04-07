@@ -39,6 +39,12 @@ public class HealerUnit : MonoBehaviour, IUnit
         Stats.init(fraction);
         IsMoving = true;
         isPlayer = _isPlayer;
+
+        if (!isPlayer)
+        {
+            Stats.unitMovementSpeed *= -1.0;
+        }
+
         GetComponent<SpriteRenderer>().sprite = fraction.healerUnit.unitSprite;
     }
 

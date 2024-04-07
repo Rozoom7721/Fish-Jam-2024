@@ -53,11 +53,11 @@ public class BottomPanel : MonoBehaviour
         healerCost.text = battleSystem.playerHealerCost.ToString();
 
 
-        queue1.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 1 ? battleSystem.unitSpawnQueue.splashArts[0] : battleSystem.unitSpawnQueue.emptySprite;
-        queue2.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 2 ? battleSystem.unitSpawnQueue.splashArts[1] : battleSystem.unitSpawnQueue.emptySprite;
-        queue3.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 3 ? battleSystem.unitSpawnQueue.splashArts[2] : battleSystem.unitSpawnQueue.emptySprite;
-        queue4.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 4 ? battleSystem.unitSpawnQueue.splashArts[3] : battleSystem.unitSpawnQueue.emptySprite;
-        queue5.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 5 ? battleSystem.unitSpawnQueue.splashArts[4] : battleSystem.unitSpawnQueue.emptySprite;
+        queue1.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 1 ? battleSystem.unitSpawnQueue.splashArts.ToArray()[0] : battleSystem.unitSpawnQueue.emptySprite;
+        queue2.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 2 ? battleSystem.unitSpawnQueue.splashArts.ToArray()[1] : battleSystem.unitSpawnQueue.emptySprite;
+        queue3.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 3 ? battleSystem.unitSpawnQueue.splashArts.ToArray()[2] : battleSystem.unitSpawnQueue.emptySprite;
+        queue4.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 4 ? battleSystem.unitSpawnQueue.splashArts.ToArray()[3] : battleSystem.unitSpawnQueue.emptySprite;
+        queue5.sprite = battleSystem.unitSpawnQueue.splashArts.Count >= 5 ? battleSystem.unitSpawnQueue.splashArts.ToArray()[4] : battleSystem.unitSpawnQueue.emptySprite;
 
 
 
