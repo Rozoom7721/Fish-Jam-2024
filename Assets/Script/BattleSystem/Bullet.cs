@@ -92,7 +92,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (collision.gameObject.CompareTag("EnemyLeader"))
+            if (collision.gameObject.CompareTag("PlayerLeader"))
             {
                 battleSystem.onLeaderHit(true, damage);
                 Destroy(gameObject);
