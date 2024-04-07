@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitHealthPoints: 400
   unitDamage: 275
-  unitAttackSpeed: -0.7
+  unitAttackSpeed: -0.4
   unitCriticalHitChance: 0.1
   unitCooldown: 6.5
   unitMovementSpeed: 0.6

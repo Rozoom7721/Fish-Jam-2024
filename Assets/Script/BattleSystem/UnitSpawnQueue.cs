@@ -18,7 +18,7 @@ public class UnitSpawnQueue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             isPlayer = !isPlayer;
         }

@@ -8,13 +8,22 @@ public class TankUnit : MonoBehaviour, IUnit
     
     public UnitStatistics Stats { get; set; }
 
-    public double CurrentHealthPoints { get; set; }
-
-    private Rigidbody2D rb;
-    public bool isPlayer;
-
+    public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
+
+    private Rigidbody2D rb;
+
+    public bool isPlayer;
+
+    private IUnit otherUnit;
+
+    private BattleSystem battleSystem;
+
+    private bool canAttack;
+    private float attackCooldown;
+    private float maxAttackCooldown;
+
 
     private void Awake()
     {
@@ -24,7 +33,7 @@ public class TankUnit : MonoBehaviour, IUnit
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -44,17 +53,32 @@ public class TankUnit : MonoBehaviour, IUnit
             Stats.unitMovementSpeed *= -1.0;
         }
 
+        attackCooldown = 1.0f / (float)Stats.unitAttackSpeed;
+        maxAttackCooldown = attackCooldown;
+
+        CurrentHealthPoints = Stats.unitHealthPoints;
+
+
         GetComponent<SpriteRenderer>().sprite = fraction.tankUnit.unitSprite;
     }
 
     public void Attack(IUnit otherUnit)
     {
-
+        if (otherUnit != null)
+        {
+            otherUnit.TakeDamage(Stats.unitDamage);
+        }
     }
 
     public void TakeDamage(double damage)
     {
+        CurrentHealthPoints -= damage;
+        CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
 
+        if (CurrentHealthPoints <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Move()
@@ -73,8 +97,59 @@ public class TankUnit : MonoBehaviour, IUnit
         if (IsMoving)
             Move();
 
+        if (IsAttacking)
+        {
+
+            if (attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                Attack(otherUnit);
+                attackCooldown = maxAttackCooldown;
+            }
+
+
+        }
+
     }
 
+
+    private void getOtherUnitFromCollision(Collision2D collision)
+    {
+        MeleeUnit meleeUnit;
+        collision.gameObject.TryGetComponent<MeleeUnit>(out meleeUnit);
+        if (meleeUnit != null)
+        {
+            otherUnit = meleeUnit;
+            return;
+        }
+
+        RangeUnit rangeUnit;
+        collision.gameObject.TryGetComponent<RangeUnit>(out rangeUnit);
+        if (rangeUnit != null)
+        {
+            otherUnit = rangeUnit;
+            return;
+        }
+
+        TankUnit tankUnit;
+        collision.gameObject.TryGetComponent<TankUnit>(out tankUnit);
+        if (tankUnit != null)
+        {
+            otherUnit = tankUnit;
+            return;
+        }
+
+        HealerUnit healerUnit;
+        collision.gameObject.TryGetComponent<HealerUnit>(out healerUnit);
+        if (healerUnit != null)
+        {
+            otherUnit = healerUnit;
+            return;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -87,7 +162,10 @@ public class TankUnit : MonoBehaviour, IUnit
                 IsMoving = false;
                 IsAttacking = true;
                 rb.velocity = Vector2.zero;
+                getOtherUnitFromCollision(collision);
+
             }
+
         }
 
         if (gameObject.tag == "EnemyUnit")
@@ -99,6 +177,8 @@ public class TankUnit : MonoBehaviour, IUnit
                 IsAttacking = true;
 
                 rb.velocity = Vector2.zero;
+                getOtherUnitFromCollision(collision);
+
             }
         }
 
@@ -113,6 +193,7 @@ public class TankUnit : MonoBehaviour, IUnit
             {
                 IsMoving = true;
                 IsAttacking = false;
+                otherUnit = null;
             }
         }
 
@@ -123,6 +204,8 @@ public class TankUnit : MonoBehaviour, IUnit
             {
                 IsMoving = true;
                 IsAttacking = false;
+                otherUnit = null;
+
 
             }
         }
