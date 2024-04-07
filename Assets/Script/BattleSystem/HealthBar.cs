@@ -5,21 +5,23 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private LeaderHealthBar leaderHealthBar;
+    [SerializeField] private EnemyLeaderHealthBar enemyLeaderHealthBar;
+
     public BattleSystem battleSystem;
 
     void Start()
     {
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
 
-       // leaderHealthBar.SetSize(.4f);
         
     }
 
     void Update()
     {
-      //  Debug.Log(battleSystem.playerLeaderHealth);
-     //   Debug.Log(battleSystem.playerFraction.fractionStatistics.leaderHealthPoints);
-        leaderHealthBar.SetSize(5000000);
+     
+        leaderHealthBar.PlayerHealth(battleSystem.playerLeaderHealth);
+        enemyLeaderHealthBar.EnemyHealth(battleSystem.enemyLeaderHealth);
+
 
     }
 }

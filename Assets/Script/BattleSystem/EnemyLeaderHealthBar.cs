@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeaderHealthBar : MonoBehaviour
+public class EnemyLeaderHealthBar : MonoBehaviour
 {
     [SerializeField] private Transform bar;
     public BattleSystem battleSystem;
@@ -18,14 +18,12 @@ public class LeaderHealthBar : MonoBehaviour
 
     void Update()
     {
-       
+
     }
-    public void PlayerHealth(double sizeNormalized)
+    public void EnemyHealth(double sizeNormalized)
     {
         currentHealth = sizeNormalized;
-        currentHealth = currentHealth / battleSystem.playerFraction.fractionStatistics.leaderHealthPoints;
-        bar.localScale = new Vector3((float)currentHealth,1f);
+        currentHealth = currentHealth / battleSystem.enemyFraction.fractionStatistics.leaderHealthPoints;
+        bar.localScale = new Vector3((float)currentHealth, 1f);
     }
- 
-
 }
