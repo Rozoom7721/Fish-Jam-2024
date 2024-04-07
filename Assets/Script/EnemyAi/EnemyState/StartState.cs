@@ -22,14 +22,17 @@ public class StartState : StateBase
         gold = battle.enemyGold;
         defence = aiState.defences;
         aiState.isDefence();
-        if (defence == true)
+        if (defence == true && battle.enemyFraction.fractionSkills.cooldownOfSkills < 2)
         {
             aiState.SwitchStat(aiState.defenceState);
         }
-        //else if (gold >= 100)
-        //{
-          //  aiState.SwitchStat(aiState.attackState);
-        //}
+        else if (gold >= 100 && battle.enemyFraction.fractionSkills.cooldownOfSkills <2)
+        {
+            aiState.SwitchStat(aiState.attackState);
+        }
+        else if (battle.enemyFraction.fractionSkills.cooldownOfSkills >= 2)
+
+        aiState.SwitchStat(aiState.att);
     }
 
     public override void OnUpdate(AiStateMenager aiState, BattleSystem battle   )
