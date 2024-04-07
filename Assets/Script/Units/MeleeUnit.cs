@@ -8,7 +8,8 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
    
     public UnitStatistics Stats { get ; set; }
-    public double CurrentHealthPoints { get ; set; }
+
+    public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
 
@@ -19,6 +20,10 @@ public class MeleeUnit : MonoBehaviour, IUnit
     private IUnit otherUnit;
 
     private BattleSystem battleSystem;
+
+    private bool canAttack;
+    private float attackCooldown;
+    private float maxAttackCooldown;
 
 
     private void Awake()
@@ -36,6 +41,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = spriteRenderer.bounds.size;
         }
+
     }
 
 
@@ -45,11 +51,15 @@ public class MeleeUnit : MonoBehaviour, IUnit
         IsMoving = true;
         isPlayer = _isPlayer;
 
-
         if(!isPlayer)
         {
             Stats.unitMovementSpeed *= -1.0;
         }
+
+        attackCooldown = 1.0f / (float)Stats.unitAttackSpeed;
+        maxAttackCooldown = attackCooldown;
+
+        CurrentHealthPoints = Stats.unitHealthPoints;
 
         GetComponent<SpriteRenderer>().sprite = fraction.meleeUnit.unitSprite;
     }
@@ -58,14 +68,19 @@ public class MeleeUnit : MonoBehaviour, IUnit
     {
         if(otherUnit != null)
         {
-
+            otherUnit.TakeDamage(Stats.unitDamage);
         }
         
     }
 
     public void TakeDamage(double damage)
     {
-
+        CurrentHealthPoints -= damage;
+        CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
+        if(CurrentHealthPoints <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Move()
@@ -85,7 +100,18 @@ public class MeleeUnit : MonoBehaviour, IUnit
         
         if(IsAttacking)
         {
-            Attack(otherUnit);
+
+            if(attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                Attack(otherUnit);
+                attackCooldown = maxAttackCooldown;
+            }
+
+
         }
 
 

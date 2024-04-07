@@ -8,14 +8,21 @@ public class HealerUnit : MonoBehaviour, IUnit
  
     public UnitStatistics Stats { get; set; }
 
-
-    public double CurrentHealthPoints { get; set; }
+    public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
 
+    private Rigidbody2D rb;
+
     public bool isPlayer;
 
-    private Rigidbody2D rb;
+    private IUnit otherUnit;
+
+    private BattleSystem battleSystem;
+
+    private bool canAttack;
+    private float attackCooldown;
+    private float maxAttackCooldown;
 
     private void Awake()
     {
@@ -25,7 +32,7 @@ public class HealerUnit : MonoBehaviour, IUnit
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -45,17 +52,38 @@ public class HealerUnit : MonoBehaviour, IUnit
             Stats.unitMovementSpeed *= -1.0;
         }
 
+        attackCooldown = 1.0f / (float)Stats.unitAttackSpeed;
+        maxAttackCooldown = attackCooldown;
+
+        CurrentHealthPoints = Stats.unitHealthPoints;
+
+
         GetComponent<SpriteRenderer>().sprite = fraction.healerUnit.unitSprite;
     }
 
     public void Attack(IUnit otherUnit)
     {
-
+        if (otherUnit != null)
+        {
+            if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
+            {
+                otherUnit.TakeDamage(Stats.unitDamage);
+            }
+            else
+            {
+                otherUnit.TakeDamage(-Stats.unitDamage);
+            }
+        }
     }
 
     public void TakeDamage(double damage)
     {
-
+        CurrentHealthPoints -= damage;
+        CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
+        if (CurrentHealthPoints <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Move()
@@ -73,59 +101,74 @@ public class HealerUnit : MonoBehaviour, IUnit
         if (IsMoving)
             Move();
 
+        if (IsAttacking)
+        {
+
+            if (attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                Attack(otherUnit);
+                attackCooldown = maxAttackCooldown;
+            }
+
+
+        }
+
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (gameObject.tag == "PlayerUnit")
-        {
-            // Jeœli jednostka koliduje z jednostk¹ przeciwnika, zatrzymaj siê
-            if (collision.gameObject.CompareTag("EnemyUnit"))
-            {
-                IsMoving = false;
-                IsAttacking = true;
-                rb.velocity = Vector2.zero;
-            }
-        }
-
-        if (gameObject.tag == "EnemyUnit")
-        {
-            // Jeœli jednostka koliduje z jednostk¹ przeciwnika, zatrzymaj siê
-            if (collision.gameObject.CompareTag("PlayerUnit"))
-            {
-                IsMoving = false;
-                IsAttacking = true;
-
-                rb.velocity = Vector2.zero;
-            }
-        }
+        IsMoving = false;
+        IsAttacking = true;
+        getOtherUnitFromCollision(collision);
+        rb.velocity = Vector2.zero;
 
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (gameObject.tag == "PlayerUnit")
-        {
-            // Jeœli jednostka koliduje z jednostk¹ przeciwnika, zatrzymaj siê
-            if (collision.gameObject.CompareTag("EnemyUnit"))
-            {
-                IsMoving = true;
-                IsAttacking = false;
-            }
-        }
-
-        if (gameObject.tag == "EnemyUnit")
-        {
-            // Jeœli jednostka koliduje z jednostk¹ przeciwnika, zatrzymaj siê
-            if (collision.gameObject.CompareTag("PlayerUnit"))
-            {
-                IsMoving = true;
-                IsAttacking = false;
-
-            }
-        }
+        IsMoving = true;
+        IsAttacking = false;
+        otherUnit = null;
     }
 
+    private void getOtherUnitFromCollision(Collision2D collision)
+    {
+        MeleeUnit meleeUnit;
+        collision.gameObject.TryGetComponent<MeleeUnit>(out meleeUnit);
+        if (meleeUnit != null)
+        {
+            otherUnit = meleeUnit;
+            return;
+        }
+
+        RangeUnit rangeUnit;
+        collision.gameObject.TryGetComponent<RangeUnit>(out rangeUnit);
+        if (rangeUnit != null)
+        {
+            otherUnit = rangeUnit;
+            return;
+        }
+
+        TankUnit tankUnit;
+        collision.gameObject.TryGetComponent<TankUnit>(out tankUnit);
+        if (tankUnit != null)
+        {
+            otherUnit = tankUnit;
+            return;
+        }
+
+        HealerUnit healerUnit;
+        collision.gameObject.TryGetComponent<HealerUnit>(out healerUnit);
+        if (healerUnit != null)
+        {
+            otherUnit = healerUnit;
+            return;
+        }
+    }
 }

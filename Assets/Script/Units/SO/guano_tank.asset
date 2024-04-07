@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitHealthPoints: 300
   unitDamage: 125
-  unitAttackSpeed: -1
+  unitAttackSpeed: -1.2
   unitCriticalHitChance: 0.05
   unitCooldown: 6.5
   unitMovementSpeed: 0.8

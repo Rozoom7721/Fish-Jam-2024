@@ -2426,9 +2426,9 @@ GameObject:
   - component: {fileID: 1077080582}
   - component: {fileID: 1077080583}
   - component: {fileID: 1077080584}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: playerLeader
-  m_TagString: PlayerUnit
+  m_TagString: PlayerLeader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3417,9 +3417,9 @@ GameObject:
   - component: {fileID: 1540179395}
   - component: {fileID: 1540179396}
   - component: {fileID: 1540179397}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: 'enemyLeader '
-  m_TagString: EnemyUnit
+  m_TagString: EnemyLeader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

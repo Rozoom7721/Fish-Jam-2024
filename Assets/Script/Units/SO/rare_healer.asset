@@ -16,7 +16,7 @@ MonoBehaviour:
   unitDamage: -50
   unitAttackSpeed: 0.3
   unitCriticalHitChance: 0
-  unitCooldown: 1
+  unitCooldown: -0.5
   unitMovementSpeed: 1.4
   unitGoldMultiplier: 1.4
   unitCostInSeconds: 6

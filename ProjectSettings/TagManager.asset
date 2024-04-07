@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - PlayerUnit
   - EnemyUnit
+  - PlayerLeader
+  - EnemyLeader
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - UI
   - PlayerUnits
   - EnemyUnits
-  - 
-  - 
+  - PlayerLeader
+  - EnemyLeader
   - 
   - 
   - 

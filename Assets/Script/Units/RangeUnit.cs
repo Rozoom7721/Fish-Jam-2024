@@ -8,12 +8,24 @@ public class RangeUnit : MonoBehaviour, IUnit
 
     public UnitStatistics Stats { get; set; }
 
-    public double CurrentHealthPoints { get; set; }
+    public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
 
     private Rigidbody2D rb;
+
     public bool isPlayer;
+
+    private BattleSystem battleSystem;
+
+    private bool canAttack;
+    private float attackCooldown;
+    private float maxAttackCooldown;
+
+
+    public GameObject bulletPrefab;
+    public float bulletSpeed;
+    public float bulletTimeToLive;
 
 
     private void Awake()
@@ -24,7 +36,7 @@ public class RangeUnit : MonoBehaviour, IUnit
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -45,16 +57,27 @@ public class RangeUnit : MonoBehaviour, IUnit
             Stats.unitMovementSpeed *= -1.0;
         }
 
+        CurrentHealthPoints = Stats.unitHealthPoints;
+
+        attackCooldown = 1.0f / (float)Stats.unitAttackSpeed;
+        maxAttackCooldown = attackCooldown;
+
+        CurrentHealthPoints = Stats.unitHealthPoints;
+
         GetComponent<SpriteRenderer>().sprite = fraction.rangeUnit.unitSprite;
     }
     public void Attack(IUnit otherUnit)
     {
-
     }
 
     public void TakeDamage(double damage)
     {
-
+        CurrentHealthPoints -= damage;
+        CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
+        if (CurrentHealthPoints <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Move()
@@ -67,10 +90,54 @@ public class RangeUnit : MonoBehaviour, IUnit
 
     }
 
+    private void AttackRange()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        string tag = "";
+        string layer = "";
+        Vector2 velocity = new Vector2(0.0f,0.0f);
+        if (isPlayer)
+        {
+            tag = "PlayerBullet";
+            layer = "PlayerBullet";
+            velocity.x = (float)Stats.unitMovementSpeed * 2.0f;
+        }
+        else
+        {
+            tag = "EnemyBullet";
+            layer = "EnemyBullet";
+            float v = (float)Stats.unitMovementSpeed * 2.0f;
+            if (v > 0.0f) v *= -1.0f;
+            velocity.x = v;
+
+        }
+        bullet.gameObject.tag = tag;
+        bullet.gameObject.layer = LayerMask.NameToLayer(layer);
+        bullet.GetComponent<Bullet>().velocity = velocity;
+        bullet.GetComponent<Bullet>().damage = Stats.unitDamage;
+
+
+        Destroy(bullet, bulletTimeToLive);
+
+
+    }
+
+
     private void FixedUpdate()
     {
         if (IsMoving)
             Move();
+
+        if (attackCooldown > 0.0f)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            AttackRange();
+            attackCooldown = maxAttackCooldown;
+        }
 
     }
 
@@ -84,7 +151,6 @@ public class RangeUnit : MonoBehaviour, IUnit
             if (collision.gameObject.CompareTag("EnemyUnit"))
             {
                 IsMoving = false;
-                IsAttacking = true;
                 rb.velocity = Vector2.zero;
             }
         }
@@ -95,8 +161,6 @@ public class RangeUnit : MonoBehaviour, IUnit
             if (collision.gameObject.CompareTag("PlayerUnit"))
             {
                 IsMoving = false;
-                IsAttacking = true;
-
                 rb.velocity = Vector2.zero;
             }
         }
@@ -111,7 +175,6 @@ public class RangeUnit : MonoBehaviour, IUnit
             if (collision.gameObject.CompareTag("EnemyUnit"))
             {
                 IsMoving = true;
-                IsAttacking = false;
             }
         }
 
@@ -121,8 +184,6 @@ public class RangeUnit : MonoBehaviour, IUnit
             if (collision.gameObject.CompareTag("PlayerUnit"))
             {
                 IsMoving = true;
-                IsAttacking = false;
-
             }
         }
     }
