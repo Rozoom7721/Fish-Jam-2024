@@ -13,6 +13,8 @@ TagManager:
   - EnemyUnit
   - PlayerLeader
   - EnemyLeader
+  - PlayerBullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -24,8 +26,8 @@ TagManager:
   - EnemyUnits
   - PlayerLeader
   - EnemyLeader
-  - 
-  - 
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 
