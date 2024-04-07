@@ -11,6 +11,7 @@ public class MenuFraction : MonoBehaviour
     public Image unit2;
     public Image unit3;
     public Image unit4;
+    public Image leader;
     public Image herb;
 
     public GameObject noUnitAlert;
@@ -34,6 +35,13 @@ public class MenuFraction : MonoBehaviour
             canAttack = true;
             noUnitAlert.SetActive(false);
         }
+
+    }
+
+
+    private void Update()
+    {
+        leader.sprite = enemyFraction.fractionPassives.leaderSplashArt;
     }
 
     public void Attack()
