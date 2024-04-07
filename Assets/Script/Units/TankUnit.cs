@@ -81,6 +81,16 @@ public class TankUnit : MonoBehaviour, IUnit
 
         if (CurrentHealthPoints <= 0.0f)
         {
+
+            if (isPlayer)
+            {
+                battleSystem.enemyGold += Stats.unitGoldIncome;
+            }
+            else
+            {
+                battleSystem.playerGold += Stats.unitGoldIncome;
+            }
+
             Destroy(gameObject);
         }
     }

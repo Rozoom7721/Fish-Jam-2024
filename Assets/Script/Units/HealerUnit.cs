@@ -85,6 +85,16 @@ public class HealerUnit : MonoBehaviour, IUnit
         CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
         if (CurrentHealthPoints <= 0.0f)
         {
+
+            if (isPlayer)
+            {
+                battleSystem.enemyGold += Stats.unitGoldIncome;
+            }
+            else
+            {
+                battleSystem.playerGold += Stats.unitGoldIncome;
+            }
+
             Destroy(gameObject);
         }
     }
