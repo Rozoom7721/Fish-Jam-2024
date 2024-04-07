@@ -25,25 +25,32 @@ public class AttackAdvanceState : StateBase
         gold = battle.enemyGold;
         foreach (var unit in unitName) 
         {
-            while (unitName !=null)
-            switch (unit)
-            {
-                case "healer":
-                    unitCost = battle.enemyHealerCost; break;
-                case "tank":
-                    unitCost = battle.enemyTankCost; break;
-                case "range":
-                    unitCost = battle.enemyRangeCost; break;
-                case "melee":
-                    unitCost = battle.enemyMeleeCost; break;
-                default:
+                switch (unit)
+                {
+                    case "healer":
+                        unitCost = battle.enemyHealerCost; break;
+                    case "tank":
+                        unitCost = battle.enemyTankCost; break;
+                    case "range":
+                        unitCost = battle.enemyRangeCost; break;
+                    case "melee":
+                        unitCost = battle.enemyMeleeCost; break;
+                    default:
+                        break;
+                }
+                gold = battle.enemyGold;
+                if (gold >= unitCost)
+                {
+                    battle.enemyBuyUnit(unit);
+                    unitName.Remove(unit);
+                }
+                else
+                {
                     break;
-            }
-            gold = battle.enemyGold;
-            if (gold >= unitCost)
+                }
+            if (unitName.Count ==0) 
             {
-                battle.enemyBuyUnit(unit);
-                unitName.Remove(unit);
+                aiState.SwitchStat(aiState.startState);
             }
         }
 
