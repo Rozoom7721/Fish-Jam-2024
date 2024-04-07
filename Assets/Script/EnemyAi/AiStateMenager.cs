@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class AiStateMenager : MonoBehaviour
 {
+    /// <summary>
+    /// basic state value
+    /// </summary>
+
     public StateBase currentState;
     public IdleState idleState = new IdleState();
     public DefenceState defenceState = new DefenceState();
     public AttackState attackState = new AttackState();
     public StartState startState = new StartState();
+    public AttackAdvanceState att = new AttackAdvanceState();
+
+    /// <summary>
+    /// This game value
+    /// </summary>
+
     public BattleSystem battleSystem;
     public string unitName;
     public AiUnitSelect aiUnitSelect = new AiUnitSelect();
+    public List <string> unitNames = new List <string>();
+
 
     public bool defences;
 
@@ -46,6 +58,10 @@ public class AiStateMenager : MonoBehaviour
     {
         unitName = aiUnitSelect.unitChoseEasy();       
     }
+    public void AdvanceSelectunit()
+    {
+        unitNames = aiUnitSelect.UnitChoseAdvance();
+    }
     public void isDefence()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PlayerUnit");
@@ -55,5 +71,6 @@ public class AiStateMenager : MonoBehaviour
         }
         else defences = false;
     }
+
 
 }

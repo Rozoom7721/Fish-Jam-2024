@@ -25,6 +25,7 @@ public class AttackState : StateBase
             default:
                 break;
         }
+       
     }
 
     public override void OnExit(AiStateMenager aiState, BattleSystem battle)
@@ -34,7 +35,13 @@ public class AttackState : StateBase
 
     public override void OnFixedUpdate(AiStateMenager aiState, BattleSystem battle)
     {
-
+        gold = battle.enemyGold;
+        Debug.Log(gold);
+        if (gold >= unitCost+100)
+        {
+            battle.enemyBuyUnit(unitName);
+            aiState.currentState = aiState.startState;
+        }
     }
 
     public override void OnUpdate(AiStateMenager aiState, BattleSystem battle)

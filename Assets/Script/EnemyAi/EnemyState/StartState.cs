@@ -19,17 +19,18 @@ public class StartState : StateBase
     
     public override void OnFixedUpdate(AiStateMenager aiState, BattleSystem battle)
     {
-        gold = battle.enemyGold;
+        /*gold = battle.enemyGold;
         defence = aiState.defences;
         aiState.isDefence();
         if (defence == true)
         {
             aiState.SwitchStat(aiState.defenceState);
         }
-        //else if (gold >= 100)
-        //{
-          //  aiState.SwitchStat(aiState.attackState);
-        //}
+        else if (gold >= 100)
+        {
+            aiState.SwitchStat(aiState.attackState);
+        }*/
+        aiState.SwitchStat(aiState.att);
     }
 
     public override void OnUpdate(AiStateMenager aiState, BattleSystem battle   )
