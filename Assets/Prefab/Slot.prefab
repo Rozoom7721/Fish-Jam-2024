@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedItemType: Range
+  playerFraction: {fileID: 0}
 --- !u!1 &6408251726284994904
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,8 +205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17b36acebe939a48b6ceefe8ad083f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  id: 
   image: {fileID: 4905886196070951395}
+  unlock: 0
+  unitStats: {fileID: 0}
   parentAfterDrag: {fileID: 0}
 --- !u!225 &7616642786342725371
 CanvasGroup:

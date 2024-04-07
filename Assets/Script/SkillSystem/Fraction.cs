@@ -303,25 +303,26 @@ public class Fraction : MonoBehaviour
 
     public void unselectUnit(string unitId)
     {
-        if(meleeUnit.unitId == unitId)
+        Debug.Log(unitId);
+        if(meleeUnit  !=null && meleeUnit.unitId == unitId)
         {
             meleeUnit = null;
             return;
         }
 
-        if (rangeUnit.unitId == unitId)
+        if (rangeUnit != null &&  rangeUnit.unitId == unitId)
         {
             rangeUnit = null;
             return;
         }
 
-        if (tankUnit.unitId == unitId)
+        if  (tankUnit != null && tankUnit.unitId == unitId)
         {
             tankUnit = null;
             return;
         }
 
-        if (healerUnit.unitId == unitId)
+        if (healerUnit != null && healerUnit.unitId == unitId)
         {
             healerUnit = null;
             return;
