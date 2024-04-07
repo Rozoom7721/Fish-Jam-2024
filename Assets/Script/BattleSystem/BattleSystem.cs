@@ -44,6 +44,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
     public UnitSpawnQueue unitSpawnQueue;
 
+    public EnemySpawnQueue enemySpawnQueue;
+
+
     public string playerUnitsLayer = "PlayerUnits";
     public string enemyUnitsLayer = "EnemyUnits";
 
@@ -52,7 +55,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     private void Start()
     {
         unitSpawnQueue = GetComponent<UnitSpawnQueue>();
-        
+        enemySpawnQueue= GetComponent<EnemySpawnQueue>();
+
+
         playerFraction = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
         enemyFraction = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Fraction>();
 
@@ -179,7 +184,54 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
         if(playerGold >= cost)
         {
             playerGold -= cost;
-            unitSpawnQueue.AddUnit(unitType,splashArt);
+            /*unitSpawnQueue.AddUnit(unitType,splashArt);*/
+            enemySpawnQueue.AddUnit(unitType);
+        }
+
+
+    }
+
+
+    public void enemyBuyUnit(string unitType)
+    {
+        double cost = 0;
+        Sprite splashArt = null;
+        switch (unitType)
+        {
+            case "melee":
+                {
+                    cost = enemyMeleeCost;
+                    splashArt = enemyFraction.meleeUnit.unitSplashArt;
+                    break;
+                }
+
+            case "range":
+                {
+                    cost = enemyRangeCost;
+                    splashArt = enemyFraction.rangeUnit.unitSplashArt;
+                    break;
+                }
+
+            case "tank":
+                {
+                    cost = enemyTankCost;
+                    splashArt = enemyFraction.tankUnit.unitSplashArt;
+                    break;
+                }
+            case "healer":
+                {
+                    cost = enemyHealerCost;
+                    splashArt = enemyFraction.healerUnit.unitSplashArt;
+                    break;
+                }
+            default:
+                break;
+        }
+
+        if (enemyGold >= cost)
+        {
+            enemyGold -= cost;
+            enemySpawnQueue.AddUnit(unitType);
         }
 
 

@@ -2,42 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitSpawnQueue : MonoBehaviour
+public class EnemySpawnQueue : MonoBehaviour
 {
     private Queue<string> queue = new Queue<string>();
     private bool full = false;
     private Coroutine processingCoroutine;
     private BattleSystem battleSystem;
 
-    public Queue<Sprite> splashArts = new Queue<Sprite>(); // Lista splash artów
-    public Sprite emptySprite;
-
-
-    public bool isPlayer;
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            isPlayer = !isPlayer;
-        }
-
-    }
 
 
     private void Start()
     {
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
-        isPlayer = true;
     }
 
-    public void AddUnit(string unitType, Sprite unitSplashArt)
+    public void AddUnit(string unitType)
     {
         if (!full)
         {
             queue.Enqueue(unitType);
-            splashArts.Enqueue(unitSplashArt);
+
 
             if (queue.Count == 5)
                 full = true;
@@ -75,13 +59,15 @@ public class UnitSpawnQueue : MonoBehaviour
             yield return new WaitForSeconds((float)cooldown);
 
             Debug.Log("Tworzenie jednostki: " + unitType);
-            battleSystem.spawnUnit(unitType, isPlayer);
+            battleSystem.spawnUnit(unitType, false);
             queue.Dequeue();
-            splashArts.Dequeue();
+
+
             full = false;
         }
 
         processingCoroutine = null;
     }
+
 
 }
