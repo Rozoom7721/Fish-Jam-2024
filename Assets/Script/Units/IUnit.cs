@@ -8,6 +8,8 @@ public interface IUnit
     bool IsMoving { get; set; }
     bool IsAttacking{ get; set; }
 
+    bool IsAttackingLeader { get; set; }
+
 
 
     void Attack(IUnit otherUnit)

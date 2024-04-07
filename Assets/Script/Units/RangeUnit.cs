@@ -11,6 +11,8 @@ public class RangeUnit : MonoBehaviour, IUnit
     public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
+    public bool IsAttackingLeader { get; set; }
+
 
     private Rigidbody2D rb;
 
@@ -50,6 +52,8 @@ public class RangeUnit : MonoBehaviour, IUnit
     {
         Stats.init(fraction);
         IsMoving = true;
+        IsAttackingLeader = false;
+
         isPlayer = _isPlayer;
 
         if (!isPlayer)
@@ -88,6 +92,11 @@ public class RangeUnit : MonoBehaviour, IUnit
     public void Distance()
     {
 
+    }
+
+    public void AttackLeader()
+    {
+        battleSystem.onLeaderHit(!isPlayer, Stats.unitDamage);
     }
 
     private void AttackRange()
@@ -137,6 +146,20 @@ public class RangeUnit : MonoBehaviour, IUnit
         {
             AttackRange();
             attackCooldown = maxAttackCooldown;
+        }
+
+
+        if (IsAttackingLeader)
+        {
+            if (attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                AttackLeader();
+                attackCooldown = maxAttackCooldown;
+            }
         }
 
     }

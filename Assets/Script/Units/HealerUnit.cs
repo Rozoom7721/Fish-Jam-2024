@@ -11,6 +11,7 @@ public class HealerUnit : MonoBehaviour, IUnit
     public double CurrentHealthPoints;
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
+    public bool IsAttackingLeader { get; set; }
 
     private Rigidbody2D rb;
 
@@ -45,6 +46,8 @@ public class HealerUnit : MonoBehaviour, IUnit
     {
         Stats.init(fraction);
         IsMoving = true;
+        IsAttackingLeader = false;
+
         isPlayer = _isPlayer;
 
         if (!isPlayer)
@@ -96,6 +99,10 @@ public class HealerUnit : MonoBehaviour, IUnit
 
     }
 
+    public void AttackLeader()
+    {
+        battleSystem.onLeaderHit(!isPlayer, Stats.unitDamage);
+    }
     private void FixedUpdate()
     {
         if (IsMoving)
@@ -117,16 +124,42 @@ public class HealerUnit : MonoBehaviour, IUnit
 
         }
 
+        if (IsAttackingLeader)
+        {
+            if (attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                AttackLeader();
+                attackCooldown = maxAttackCooldown;
+            }
+        }
+
+
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        IsMoving = false;
-        IsAttacking = true;
-        getOtherUnitFromCollision(collision);
-        rb.velocity = Vector2.zero;
+        if(collision.gameObject.CompareTag("PlayerUnit") || collision.gameObject.CompareTag("EnemyUnit"))
+        {
+            IsMoving = false;
+            IsAttacking = true;
+            IsAttackingLeader = false;
+            getOtherUnitFromCollision(collision);
+            rb.velocity = Vector2.zero;
+        }
+        else if (collision.gameObject.CompareTag("PlayerLeader") || collision.gameObject.CompareTag("EnemyLeader"))
+        {
+            IsMoving = false;
+            IsAttacking = false;
+            IsAttackingLeader = true;
+            rb.velocity = Vector2.zero;
+        }
+
 
     }
 
@@ -134,6 +167,7 @@ public class HealerUnit : MonoBehaviour, IUnit
     {
         IsMoving = true;
         IsAttacking = false;
+        IsAttackingLeader = false;
         otherUnit = null;
     }
 

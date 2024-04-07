@@ -13,6 +13,8 @@ public class MeleeUnit : MonoBehaviour, IUnit
     public bool IsMoving { get; set; }
     public bool IsAttacking { get; set; }
 
+    public bool IsAttackingLeader { get; set; }
+
     private Rigidbody2D rb;
 
     public bool isPlayer;
@@ -49,6 +51,8 @@ public class MeleeUnit : MonoBehaviour, IUnit
     {
         Stats.init(fraction);
         IsMoving = true;
+        IsAttackingLeader = false;
+
         isPlayer = _isPlayer;
 
         if(!isPlayer)
@@ -93,6 +97,11 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
     }
 
+    public void AttackLeader()
+    {
+        battleSystem.onLeaderHit(!isPlayer, Stats.unitDamage);
+    }
+
     private void FixedUpdate()
     {
         if(IsMoving)
@@ -113,6 +122,20 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
 
         }
+
+        if(IsAttackingLeader)
+        {
+            if (attackCooldown > 0.0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                AttackLeader();
+                attackCooldown = maxAttackCooldown;
+            }
+        }
+
 
 
 
@@ -164,9 +187,18 @@ public class MeleeUnit : MonoBehaviour, IUnit
             {
                 IsMoving = false;
                 IsAttacking = true;
+                IsAttackingLeader = false;
                 rb.velocity = Vector2.zero;
                 getOtherUnitFromCollision(collision);
+            }
 
+            if (collision.gameObject.CompareTag("EnemyLeader"))
+            {
+                IsMoving = false;
+                IsAttacking = false;
+                IsAttackingLeader = true;
+                rb.velocity = Vector2.zero;
+                
             }
 
         }
@@ -178,9 +210,19 @@ public class MeleeUnit : MonoBehaviour, IUnit
             {
                 IsMoving = false;
                 IsAttacking = true;
+                IsAttackingLeader = false;
 
                 rb.velocity = Vector2.zero;
                 getOtherUnitFromCollision(collision);
+
+            }
+
+            if (collision.gameObject.CompareTag("PlayerLeader"))
+            {
+                IsMoving = false;
+                IsAttacking = false;
+                IsAttackingLeader = true;
+                rb.velocity = Vector2.zero;
 
             }
         }
@@ -196,7 +238,15 @@ public class MeleeUnit : MonoBehaviour, IUnit
             {
                 IsMoving = true;
                 IsAttacking = false;
+                IsAttackingLeader = false;
                 otherUnit = null;
+            }
+
+            if (collision.gameObject.CompareTag("EnemyLeader"))
+            {
+                IsMoving = true;
+                IsAttacking = false;
+                IsAttackingLeader = false;
             }
         }
 
@@ -207,9 +257,15 @@ public class MeleeUnit : MonoBehaviour, IUnit
             {
                 IsMoving = true;
                 IsAttacking = false;
-                otherUnit = null;
+                IsAttackingLeader = false;
 
+            }
 
+            if (collision.gameObject.CompareTag("PlayerLeader"))
+            {
+                IsMoving = true;
+                IsAttacking = false;
+                IsAttackingLeader = false;
             }
         }
     }

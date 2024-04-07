@@ -11,9 +11,12 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private BattleSystem battleSystem;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
     }
 
     // Update is called once per frame
@@ -70,6 +73,13 @@ public class Bullet : MonoBehaviour
                 otherUnit.TakeDamage(damage);
                 Destroy(gameObject);
             }
+
+            if (collision.gameObject.CompareTag("EnemyLeader"))
+            {
+                battleSystem.onLeaderHit(false, damage);
+                Destroy(gameObject);
+            }
+
         }
 
         if (gameObject.tag == "EnemyBullet")
@@ -81,6 +91,13 @@ public class Bullet : MonoBehaviour
                 otherUnit.TakeDamage(damage);
                 Destroy(gameObject);
             }
+
+            if (collision.gameObject.CompareTag("EnemyLeader"))
+            {
+                battleSystem.onLeaderHit(true, damage);
+                Destroy(gameObject);
+            }
+
         }
 
     }
