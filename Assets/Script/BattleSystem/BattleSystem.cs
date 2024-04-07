@@ -240,7 +240,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     public void spawnUnit(string unitType, bool isPlayer)
     {
 
-        Quaternion rotation = isPlayer ? playerSpawner.transform.rotation : enemySpawner.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
+       // Quaternion rotation = isPlayer ? playerSpawner.transform.rotation : enemySpawner.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
         Vector3 position = isPlayer ? playerSpawner.transform.position : enemySpawner.transform.position;
 
         switch (unitType)
@@ -248,7 +248,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
             case "melee":
                 {
-                    MeleeUnit unit = Instantiate(playerFraction.meleePrefab, position, rotation).GetComponent<MeleeUnit>();
+                    MeleeUnit unit = Instantiate(playerFraction.meleePrefab, position, Quaternion.identity).GetComponent<MeleeUnit>();
 
                     if(isPlayer)
                     {
@@ -259,6 +259,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
                     }
                     else
                     {
+
+                        unit.GetComponent<SpriteRenderer>().flipX = true;
+
                         unit.gameObject.tag = "EnemyUnit";
                         unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
                         unit.init(enemyFraction, isPlayer);
@@ -269,7 +272,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
             case "range":
                 {
-                    RangeUnit unit = Instantiate(playerFraction.rangePrefab, position, rotation).GetComponent<RangeUnit>();
+                    RangeUnit unit = Instantiate(playerFraction.rangePrefab, position, Quaternion.identity).GetComponent<RangeUnit>();
 
                     if (isPlayer)
                     {
@@ -280,6 +283,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
                     }
                     else
                     {
+
+                        unit.GetComponent<SpriteRenderer>().flipX = true;
+
                         unit.gameObject.tag = "EnemyUnit";
                         unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
 
@@ -291,7 +297,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
             case "tank":
                 {
-                    TankUnit unit = Instantiate(playerFraction.tankPrefab, position, rotation).GetComponent<TankUnit>();
+                    TankUnit unit = Instantiate(playerFraction.tankPrefab, position, Quaternion.identity).GetComponent<TankUnit>();
 
                     if (isPlayer)
                     {
@@ -301,6 +307,8 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
                     }
                     else
                     {
+                        unit.GetComponent<SpriteRenderer>().flipX = true;
+
                         unit.gameObject.tag = "EnemyUnit";
                         unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
 
@@ -312,7 +320,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
             case "healer":
                 {
-                    HealerUnit unit = Instantiate(playerFraction.healerPrefab, position, rotation).GetComponent<HealerUnit>();
+                    HealerUnit unit = Instantiate(playerFraction.healerPrefab, position, Quaternion.identity).GetComponent<HealerUnit>();
 
                     if (isPlayer)
                     {
@@ -323,6 +331,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
                     }
                     else
                     {
+                        unit.GetComponent<SpriteRenderer>().flipX = true;
                         unit.gameObject.tag = "EnemyUnit";
                         unit.gameObject.layer = LayerMask.NameToLayer(enemyUnitsLayer);
 
