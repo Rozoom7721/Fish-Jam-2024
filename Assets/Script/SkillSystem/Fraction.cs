@@ -70,7 +70,10 @@ public class Fraction : MonoBehaviour
 
         /*        skillOnClickListeners = new List<ISkillOnClickListener>();*/
         if (gameObject.tag == "Player")
-        DontDestroyOnLoad(gameObject);
+        {
+            DontDestroyOnLoad(gameObject);
+            loadData();
+        }
     }
 
     void Start()
@@ -368,6 +371,150 @@ public class Fraction : MonoBehaviour
         all_unit_types = new List<UnitStats>(other.all_unit_types);
     }
 
+    public void saveData()
+    {
+        Debug.Log("Saving data");
+        string levelsString = string.Join(",", levelsDone.ConvertAll(x => x.ToString()).ToArray());
+        PlayerPrefs.SetString("levelsDone", levelsString);
+
+        PlayerPrefs.SetInt("bigPoints", bigPoints);
+        PlayerPrefs.SetInt("smallPoints", smallPoints);
+
+        string availbleUnitsString = "";
+        foreach(UnitStats unit in availbleUnits)
+        {
+            availbleUnitsString = availbleUnitsString + "," + unit.unitId;
+        }
+        PlayerPrefs.SetString("availbleUnits", availbleUnitsString);
+
+        if(meleeUnit != null)
+        {
+            PlayerPrefs.SetString("meleeUnit", meleeUnit.unitId);
+        }
+        else
+        {
+            PlayerPrefs.SetString("meleeUnit", "");
+
+        }
+
+        if (rangeUnit != null)
+        {
+            PlayerPrefs.SetString("rangeUnit", rangeUnit.unitId);
+        }
+        else
+        {
+            PlayerPrefs.SetString("rangeUnit", "");
+
+        }
+
+        if (tankUnit != null)
+        {
+            PlayerPrefs.SetString("tankUnit", tankUnit.unitId);
+        }
+        else
+        {
+            PlayerPrefs.SetString("tankUnit", "");
+
+        }
+
+        if (healerUnit != null)
+        {
+            PlayerPrefs.SetString("healerUnit", healerUnit.unitId);
+        }
+        else
+        {
+            PlayerPrefs.SetString("healerUnit", "");
+
+        }
+
+    }
+
+    private void loadData()
+    {
+        string levelsDoneString = PlayerPrefs.GetString("levelsDone", "");
+        string[] levelsDoneArray = levelsDoneString.Split(',');
+
+        foreach (string levelString in levelsDoneArray)
+        {
+            int level;
+            if (int.TryParse(levelString, out level))
+            {
+                levelsDone.Add(level);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to parse level: " + levelString);
+            }
+        }
+
+
+        string availbleUnitsString = PlayerPrefs.GetString("availbleUnits", "");
+        string[] availbleUnitsArray = availbleUnitsString.Split(',');
+
+        foreach (string unitId in availbleUnitsArray)
+        {
+            foreach (UnitStats unit in all_unit_types)
+            {
+                if(unit.unitId == unitId)
+                {
+                    availbleUnits.Add(unit);
+                    break;
+                }
+            }
+        }
+
+        bigPoints = PlayerPrefs.GetInt("bigPoints", 0);
+        smallPoints = PlayerPrefs.GetInt("smallPoints", 0);
+
+        string meleeString = PlayerPrefs.GetString("meleeUnit", "");
+        if(meleeString != "")
+        {
+            foreach(UnitStats unit in all_unit_types)
+            {
+                if (unit.unitId == meleeString)
+                { 
+                    meleeUnit = unit;
+                }
+            }
+        }
+
+        string rangeString = PlayerPrefs.GetString("rangeUnit", "");
+        if (rangeString != "")
+        {
+            foreach (UnitStats unit in all_unit_types)
+            {
+                if (unit.unitId == rangeString)
+                {
+                    rangeUnit = unit;
+                }
+            }
+        }
+
+        string tankString = PlayerPrefs.GetString("tankUnit", "");
+        if (tankString != "")
+        {
+            foreach (UnitStats unit in all_unit_types)
+            {
+                if (unit.unitId == tankString)
+                {
+                    tankUnit = unit;
+                }
+            }
+        }
+
+        string healerString = PlayerPrefs.GetString("healerUnit", "");
+        if (healerString != "")
+        {
+            foreach (UnitStats unit in all_unit_types)
+            {
+                if (unit.unitId == healerString)
+                {
+                    healerUnit = unit;
+                }
+            }
+        }
+
+    }
 
 
 }
