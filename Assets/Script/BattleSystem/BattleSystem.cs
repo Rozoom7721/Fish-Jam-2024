@@ -13,8 +13,8 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     public GameObject winScreen;
     public GameObject loseScreen;
 
-    private Fraction playerFraction;
-    private Fraction enemyFraction;
+    public Fraction playerFraction;
+    public Fraction enemyFraction;
 
     public double playerGold;
     public double enemyGold;
