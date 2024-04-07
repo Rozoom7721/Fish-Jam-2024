@@ -18,4 +18,6 @@ public class FractionPassives : ScriptableObject
     public double baseUnitDamage;
     public double baseUnitCriticalHitChance;
 
+    public Sprite leaderSprite;
+    public Sprite leaderSplashArt;
 }
