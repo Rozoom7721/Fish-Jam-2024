@@ -70,11 +70,11 @@ public class HealerUnit : MonoBehaviour, IUnit
         {
             if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
             {
-                otherUnit.TakeDamage(Stats.unitDamage);
+                otherUnit.TakeDamage(-Stats.unitDamage);
             }
             else
             {
-                otherUnit.TakeDamage(-Stats.unitDamage);
+                otherUnit.TakeDamage(Stats.unitDamage);
             }
         }
     }
