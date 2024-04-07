@@ -23,5 +23,5 @@ MonoBehaviour:
   unitRange: 1
   unitId: bigfish_healer
   unitIsHealer: 1
-  unitSprite: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
-  unitSplashArt: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
+  unitSprite: {fileID: 21300000, guid: 86c7e514cbaccb9469c72de39446cffa, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 4fd8f89ef5731b446b49ed6508bbbcbd, type: 3}

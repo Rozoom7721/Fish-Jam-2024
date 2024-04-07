@@ -24,4 +24,4 @@ MonoBehaviour:
   unitId: predator_tank
   unitIsHealer: 0
   unitSprite: {fileID: 21300000, guid: fa795a70be3a3ef47914db84d5acb479, type: 3}
-  unitSplashArt: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 59127369442831b448f3cedf3084f741, type: 3}

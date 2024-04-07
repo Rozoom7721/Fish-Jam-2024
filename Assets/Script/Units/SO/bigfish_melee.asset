@@ -23,5 +23,5 @@ MonoBehaviour:
   unitRange: 1
   unitId: bigfish_melee
   unitIsHealer: 0
-  unitSprite: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
-  unitSplashArt: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
+  unitSprite: {fileID: 21300000, guid: 5853e83e42b44b74db23d52dd8fd68a8, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: e2e6b18498d518c45ba2ed441988c54a, type: 3}

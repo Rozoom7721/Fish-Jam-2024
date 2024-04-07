@@ -23,5 +23,5 @@ MonoBehaviour:
   unitRange: 1
   unitId: rare_tank
   unitIsHealer: 0
-  unitSprite: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
-  unitSplashArt: {fileID: 21300000, guid: a8ddc52da63c00043ab477fe235dcd15, type: 3}
+  unitSprite: {fileID: 21300000, guid: 961a97f969e64ab4e86fc11d5991a991, type: 3}
+  unitSplashArt: {fileID: 21300000, guid: 146fd9466315274408c29a410f061f76, type: 3}
