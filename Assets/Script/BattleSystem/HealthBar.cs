@@ -18,10 +18,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-     
         leaderHealthBar.PlayerHealth(battleSystem.playerLeaderHealth);
         enemyLeaderHealthBar.EnemyHealth(battleSystem.enemyLeaderHealth);
-
-
     }
 }

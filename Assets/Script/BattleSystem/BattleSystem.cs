@@ -184,8 +184,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
         if(playerGold >= cost)
         {
             playerGold -= cost;
-            /*unitSpawnQueue.AddUnit(unitType,splashArt);*/
-            enemySpawnQueue.AddUnit(unitType);
+            unitSpawnQueue.AddUnit(unitType, splashArt);
         }
 
 
