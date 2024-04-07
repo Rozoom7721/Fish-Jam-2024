@@ -16,9 +16,16 @@ public class Castle : MonoBehaviour
 
     private Fraction enemyFraction;
 
+    public int levelId;
+
 
     private void Start()
     {
+
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>().levelsDone.Contains(levelId))
+        {
+            Destroy(gameObject);
+        }
 
         enemyFraction = GetComponent<Fraction>();
 
@@ -41,5 +48,8 @@ public class Castle : MonoBehaviour
         menuFraction.unit3.sprite = unit3;
         menuFraction.unit4.sprite = unit4;
         menuFraction.herb.sprite = herb;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>().lastLevelId = levelId;
+
     }
 }

@@ -7,7 +7,11 @@ public class LoseScreen : MonoBehaviour
 {
     public void onClick()
     {
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        SceneManager.MoveGameObjectToScene(enemy, SceneManager.GetActiveScene());
+
         SceneManager.LoadScene("mapa_mati");
+
     }
 
 

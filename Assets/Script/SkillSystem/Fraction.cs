@@ -32,6 +32,8 @@ public class Fraction : MonoBehaviour
     public List<UnitStats> all_unit_types;
 
 
+    public List<int> levelsDone;
+    public int lastLevelId;
 
     private bool shouldNotify;
     private List<ISkillOnClickListener> skillOnClickListeners;
@@ -365,5 +367,7 @@ public class Fraction : MonoBehaviour
 
         all_unit_types = new List<UnitStats>(other.all_unit_types);
     }
+
+
 
 }

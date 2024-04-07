@@ -14,8 +14,12 @@ public class WinnerScreen : MonoBehaviour
 
     private BattleSystem battleSystem;
 
+
     private void Start()
     {
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        SceneManager.MoveGameObjectToScene(enemy, SceneManager.GetActiveScene());
+
 
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
 
@@ -33,6 +37,7 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.AddUnit(unitId);
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
+        battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
         SceneManager.LoadScene("mapa_mati");
     }
 
@@ -42,6 +47,8 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.AddUnit(unitId);
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
+        battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
         SceneManager.LoadScene("mapa_mati");
 
     }
@@ -52,6 +59,8 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.AddUnit(unitId);
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
+        battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
         SceneManager.LoadScene("mapa_mati");
 
     }
@@ -62,6 +71,8 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.AddUnit(unitId);
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
+        battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
         SceneManager.LoadScene("mapa_mati");
 
     }
