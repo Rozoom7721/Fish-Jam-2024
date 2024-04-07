@@ -55,8 +55,19 @@ public class Fraction : MonoBehaviour
 
     private void Awake()
     {
-/*        skillOnClickListeners = new List<ISkillOnClickListener>();*/
-        if(gameObject.tag == "Player")
+
+        if(GameObject.FindGameObjectWithTag("Player") != gameObject && gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
+        if (GameObject.FindGameObjectWithTag("Enemy") != gameObject && gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+
+        /*        skillOnClickListeners = new List<ISkillOnClickListener>();*/
+        if (gameObject.tag == "Player")
         DontDestroyOnLoad(gameObject);
     }
 

@@ -20,3 +20,5 @@ MonoBehaviour:
   baseUnitAttackSpeed: 1
   baseUnitDamage: 70
   baseUnitCriticalHitChance: 0.075
+  leaderSprite: {fileID: 21300000, guid: 91dadd895c617984a9f8a2047692abb5, type: 3}
+  leaderSplashArt: {fileID: 21300000, guid: f9d79d64f042dbb4994042a1d9108ca3, type: 3}

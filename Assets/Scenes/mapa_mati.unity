@@ -273,14 +273,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
-      propertyPath: bigPoints
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
-      propertyPath: smallPoints
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: all_unit_types.Array.size
       value: 20
       objectReference: {fileID: 0}
@@ -335,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 5930088976342033285, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: m_Name
       value: Fraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930088976342033285, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9102031903029798406, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3509,6 +3505,10 @@ PrefabInstance:
     - target: {fileID: 8594210016393303432, guid: fea538c8ee18c114ebbc527d56e7f920, type: 3}
       propertyPath: id
       value: bigfish_melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594210016393303432, guid: fea538c8ee18c114ebbc527d56e7f920, type: 3}
+      propertyPath: unlock
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8594210016393303432, guid: fea538c8ee18c114ebbc527d56e7f920, type: 3}
       propertyPath: unitStats
@@ -9337,6 +9337,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1053389292}
+        m_TargetAssemblyTypeName: Difficulty, Assembly-CSharp
+        m_MethodName: onButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

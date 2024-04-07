@@ -45,4 +45,12 @@ public class Difficulty : MonoBehaviour
         howHard.text = "";
 
     }
+
+    public void onButtonClick()
+    {
+        questGuy.SetActive(false);
+        animator.SetTrigger("Eye");
+        howHard.text = "";
+    }
+
 }
