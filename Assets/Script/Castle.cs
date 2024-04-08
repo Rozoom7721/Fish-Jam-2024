@@ -19,6 +19,11 @@ public class Castle : MonoBehaviour
     public int levelId;
 
 
+    public GameObject starTier1;
+    public GameObject starTier2;
+    public GameObject starTier3;
+    public GameObject starTier4;
+
     private void Start()
     {
 
@@ -33,6 +38,50 @@ public class Castle : MonoBehaviour
         unit2 = enemyFraction.rangeUnit.unitSplashArt;
         unit3 = enemyFraction.tankUnit.unitSplashArt;
         unit4 = enemyFraction.healerUnit.unitSplashArt;
+
+
+        switch(enemyFraction.skillTier)
+        {
+            case 1:
+                {
+                    starTier1.SetActive(true);
+                    starTier2.SetActive(false);
+                    starTier3.SetActive(false);
+                    starTier4.SetActive(false);
+
+                    break;
+                }
+            case 2:
+                {
+                    starTier1.SetActive(false);
+                    starTier2.SetActive(true);
+                    starTier3.SetActive(false);
+                    starTier4.SetActive(false);
+
+
+
+                    break;
+                }
+            case 3:
+                {
+                    starTier1.SetActive(false);
+                    starTier2.SetActive(false);
+                    starTier3.SetActive(true);
+                    starTier4.SetActive(false);
+
+
+                    break;
+                }
+            case 4:
+                {
+                    starTier1.SetActive(false);
+                    starTier2.SetActive(false);
+                    starTier3.SetActive(false);
+                    starTier4.SetActive(true);
+
+                    break;
+                }
+        }
 
     }
 
