@@ -68,14 +68,32 @@ public class HealerUnit : MonoBehaviour, IUnit
     {
         if (otherUnit != null)
         {
-            if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
+            // for player unit
+            if(isPlayer)
             {
-                otherUnit.TakeDamage(-Stats.unitDamage);
+                if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
+                {
+                    otherUnit.TakeDamage(Stats.unitDamage > 0.0f ? Stats.unitDamage : -Stats.unitDamage);
+                }
+                else
+                {
+
+                    otherUnit.TakeDamage(Stats.unitDamage > 0.0f ? -Stats.unitDamage : Stats.unitDamage);
+                }
             }
             else
             {
-                otherUnit.TakeDamage(Stats.unitDamage);
+                if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
+                {
+                    otherUnit.TakeDamage(Stats.unitDamage > 0.0f ? -Stats.unitDamage : Stats.unitDamage);
+                }
+                else
+                {
+
+                    otherUnit.TakeDamage(Stats.unitDamage > 0.0f ? Stats.unitDamage : -Stats.unitDamage);
+                }
             }
+
         }
     }
 

@@ -147,6 +147,12 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
 
     public void playerBuyUnit(string unitType)
     {
+
+        if(unitSpawnQueue.queue.Count > 4)
+        {
+            return;
+        }
+
         double cost = 0;
         Sprite splashArt = null;
         switch (unitType)

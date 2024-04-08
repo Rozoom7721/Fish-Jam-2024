@@ -16,9 +16,6 @@ public class Leader : MonoBehaviour
         leaderSprite = GetComponent<SpriteRenderer>();
 
 
-        Debug.LogWarning("elo");
-
-
     }
 
     private void Update()

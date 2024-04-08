@@ -12,9 +12,6 @@ public class TankUnitHealthBar : MonoBehaviour
     void Start()
     {
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
-      
-
-
 
     }
 

@@ -11,10 +11,22 @@ public class Difficulty : MonoBehaviour
     public bool textShow;
     public TextMeshProUGUI howHard;
     public GameObject questGuy;
+
+    private Color easyColor;
+    private Color hardColor;
+
+
     void Start()
     {
+
+        easyColor = new Color(0, 0, 0, 1);
+        hardColor = new Color(1, 0, 0, 1);
+
+
         // animator = GetComponent<Animator>();
         questGuy.SetActive(false);
+        fractionPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
+
     }
 
     void OnMouseEnter()
@@ -25,12 +37,14 @@ public class Difficulty : MonoBehaviour
 
         if (fraction.skillTier <= fractionPlayer.skillTier)
         {
-            howHard.text = "Easy";
+            howHard.text = "Looks like we have chances in this battle";
+            howHard.color = easyColor;
 
         }
         else
         {
-            howHard.text = "Hard";
+            howHard.text = "You are not ready for this";
+            howHard.color = hardColor;
 
         }
 

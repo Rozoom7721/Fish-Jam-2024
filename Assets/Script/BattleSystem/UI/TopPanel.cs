@@ -5,7 +5,6 @@ using TMPro;
 
 public class TopPanel : MonoBehaviour
 {
-    public TextMeshProUGUI hpText;
     public TextMeshProUGUI goldText;
 
     private BattleSystem battleSystem;
@@ -17,7 +16,7 @@ public class TopPanel : MonoBehaviour
 
     void Update()
     {
-        hpText.text = battleSystem.playerLeaderHealth.ToString();
-        goldText.text = battleSystem.playerGold.ToString();
+        long gold = (long)battleSystem.playerGold;
+        goldText.text = gold.ToString();
     }
 }
