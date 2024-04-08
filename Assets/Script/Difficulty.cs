@@ -25,6 +25,8 @@ public class Difficulty : MonoBehaviour
 
         // animator = GetComponent<Animator>();
         questGuy.SetActive(false);
+        fractionPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>();
+
     }
 
     void OnMouseEnter()
