@@ -5,17 +5,20 @@ using UnityEngine;
 public class LeaderDamage : MonoBehaviour
 {
     //  public MeleeUnit hpUnit;
+    public BattleSystem battleSystem;
+
     public Collision2D collision;
-    private List<MeleeUnit> meleeUnits = new List<MeleeUnit>();
-    private List<RangeUnit> rangeUnits = new List<RangeUnit>();
-    private List<TankUnit> tankUnits = new List<TankUnit>();
-    private List<HealerUnit> healerUnits = new List<HealerUnit>();
+    public List<MeleeUnit> meleeUnits = new List<MeleeUnit>();
+    public List<RangeUnit> rangeUnits = new List<RangeUnit>();
+    public List<TankUnit> tankUnits = new List<TankUnit>();
+    public List<HealerUnit> healerUnits = new List<HealerUnit>();
     private float damageTimer = 0f;
-    private float damageTimer2= 0.1f;
+    private float damageTimer2= 2f;
     public bool enemy;
     void Start()
     {
-        
+        battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
+
     }
 
     void Update()
@@ -114,21 +117,25 @@ public class LeaderDamage : MonoBehaviour
     {
         try
         {
+            double damage = enemy ? (battleSystem.playerFraction.meleeUnit.unitDamage +  battleSystem.playerFraction.fractionPassives.baseUnitDamage)* Mathf.Pow(10,battleSystem.playerFraction.skillTier *3):
+    (battleSystem.enemyFraction.meleeUnit.unitDamage + battleSystem.enemyFraction.fractionPassives.baseUnitDamage) * Mathf.Pow(10, battleSystem.enemyFraction.skillTier * 3);   
+            damage = damage * 2;
+            Debug.Log(damage);
             foreach (var meleeUnit in meleeUnits)
             {
-                meleeUnit.TakeDamage(5000.0);
+                meleeUnit.TakeDamage(damage);
             }
             foreach (var rangeUnit in rangeUnits)
             {
-                rangeUnit.TakeDamage(5000.0);
+                rangeUnit.TakeDamage(damage);
             }
             foreach (var tankUnit in tankUnits)
             {
-                tankUnit.TakeDamage(5000.0);
+                tankUnit.TakeDamage(damage);
             }
             foreach (var healerUnit in healerUnits)
             {
-                healerUnit.TakeDamage(5000.0);
+                healerUnit.TakeDamage(damage);
             }
         }
         catch(System.Exception ex) 
