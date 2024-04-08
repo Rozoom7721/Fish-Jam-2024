@@ -338,7 +338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &228039852
 Transform:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5930088976342033285, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9102031903029798406, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6279,6 +6279,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleSystem: {fileID: 0}
+  meleeUnits: []
+  rangeUnits: []
+  tankUnits: []
+  healerUnits: []
   enemy: 0
 --- !u!114 &8937912187825848939
 MonoBehaviour:
@@ -6293,6 +6297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleSystem: {fileID: 0}
+  meleeUnits: []
+  rangeUnits: []
+  tankUnits: []
+  healerUnits: []
   enemy: 1
 --- !u!61 &9102263816216568110
 BoxCollider2D:
