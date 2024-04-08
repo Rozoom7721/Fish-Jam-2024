@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: rare_range
   m_EditorClassIdentifier: 
   unitHealthPoints: -100
-  unitDamage: 25
+  unitDamage: 15
   unitAttackSpeed: 0.3
   unitCriticalHitChance: 0
   unitCooldown: 1

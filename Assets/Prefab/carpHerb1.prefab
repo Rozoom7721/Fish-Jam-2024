@@ -152,6 +152,7 @@ MonoBehaviour:
   endSprie: {fileID: 21300000, guid: 52f3b9a616366f04687cf172db1a106c, type: 3}
   castle: {fileID: 3702423800294029713}
   description: {fileID: 7363735867964403154}
+  soundPlayer: {fileID: 0}
 --- !u!114 &3702423800294029713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34db9b7088ab28949ad0d4e726e5dbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractionName: 
+  fractionName: RARE FISHES
   fractionPassives: {fileID: 11400000, guid: 15ae68a819255c545961be5e8782a3dc, type: 2}
   fractionSkills: {fileID: 11400000, guid: e146ecad213d40947ad65eab6d9f8a22, type: 2}
   fractionStatistics: {fileID: 0}

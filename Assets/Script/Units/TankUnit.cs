@@ -70,7 +70,15 @@ public class TankUnit : MonoBehaviour, IUnit
     {
         if (otherUnit != null)
         {
-            otherUnit.TakeDamage(Stats.unitDamage);
+
+            float crit = Random.RandomRange(0.0f, 1.0f);
+            double damage = Stats.unitDamage;
+            if (crit < Stats.unitCriticalHitChance)
+            {
+                damage = damage * 2.0f;
+            }
+
+            otherUnit.TakeDamage(damage);
         }
     }
 

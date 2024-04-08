@@ -38,6 +38,9 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
         battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
+        battleSystem.playerFraction.saveData();
+
         SceneManager.LoadScene("mapa_mati");
     }
 
@@ -48,6 +51,9 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
         battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
+        battleSystem.playerFraction.saveData();
+
 
         SceneManager.LoadScene("mapa_mati");
 
@@ -61,6 +67,9 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.smallPoints++;
         battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
 
+        battleSystem.playerFraction.saveData();
+
+
         SceneManager.LoadScene("mapa_mati");
 
     }
@@ -72,6 +81,9 @@ public class WinnerScreen : MonoBehaviour
         battleSystem.playerFraction.bigPoints++;
         battleSystem.playerFraction.smallPoints++;
         battleSystem.playerFraction.levelsDone.Add(battleSystem.playerFraction.lastLevelId);
+
+        battleSystem.playerFraction.saveData();
+
 
         SceneManager.LoadScene("mapa_mati");
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bigfish_range
   m_EditorClassIdentifier: 
   unitHealthPoints: -100
-  unitDamage: 0
+  unitDamage: -5
   unitAttackSpeed: 0
   unitCriticalHitChance: 0.1
   unitCooldown: 1

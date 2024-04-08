@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuFraction : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class MenuFraction : MonoBehaviour
     public Image unit4;
     public Image leader;
     public Image herb;
+    public TextMeshProUGUI fractionNameText;
 
     public GameObject noUnitAlert;
 
 
     public Fraction enemyFraction;
+
 
     private bool canAttack;
 
@@ -42,6 +45,7 @@ public class MenuFraction : MonoBehaviour
     private void Update()
     {
         leader.sprite = enemyFraction.fractionPassives.leaderSplashArt;
+        fractionNameText.text = enemyFraction.fractionName;
     }
 
     public void Attack()
@@ -54,6 +58,8 @@ public class MenuFraction : MonoBehaviour
         enemyFractionComponent.CopyFrom(enemyFraction);
 
         DontDestroyOnLoad(enemy);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Fraction>().saveData();
 
         SceneManager.LoadScene("SampleScene");
     }

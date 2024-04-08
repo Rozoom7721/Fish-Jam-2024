@@ -23,8 +23,10 @@ public class AttackAdvanceState : StateBase
     public override void OnFixedUpdate(AiStateMenager aiState, BattleSystem battle)
     {
         gold = battle.enemyGold;
-        foreach (var unit in unitName) 
+        try
         {
+            foreach (var unit in unitName)
+            {
                 switch (unit)
                 {
                     case "healer":
@@ -48,10 +50,15 @@ public class AttackAdvanceState : StateBase
                 {
                     break;
                 }
-            if (unitName.Count ==0) 
-            {
-                aiState.SwitchStat(aiState.startState);
+                if (unitName.Count == 0)
+                {
+                    aiState.SwitchStat(aiState.startState);
+                }
             }
+        }
+        catch(System.Exception ex)
+        {
+
         }
 
     }

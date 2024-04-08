@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: player_range
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitHealthPoints: -125
-  unitDamage: 20
+  unitDamage: 10
   unitAttackSpeed: 0.3
   unitCriticalHitChance: 0
   unitCooldown: 1

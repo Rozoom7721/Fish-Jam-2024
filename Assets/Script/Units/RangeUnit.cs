@@ -64,7 +64,7 @@ public class RangeUnit : MonoBehaviour, IUnit
         CurrentHealthPoints = Stats.unitHealthPoints;
 
         attackCooldown = 1.0f / (float)Stats.unitAttackSpeed;
-        maxAttackCooldown = attackCooldown;
+        maxAttackCooldown = attackCooldown * 2.0f;
 
         CurrentHealthPoints = Stats.unitHealthPoints;
 
@@ -135,7 +135,15 @@ public class RangeUnit : MonoBehaviour, IUnit
         bullet.gameObject.tag = tag;
         bullet.gameObject.layer = LayerMask.NameToLayer(layer);
         bullet.GetComponent<Bullet>().velocity = velocity;
-        bullet.GetComponent<Bullet>().damage = Stats.unitDamage;
+
+        float crit = Random.RandomRange(0.0f, 1.0f);
+        double damage = Stats.unitDamage;
+        if (crit < Stats.unitCriticalHitChance)
+        {
+            damage = damage * 2.0f;
+        }
+
+        bullet.GetComponent<Bullet>().damage = damage;
 
 
         Destroy(bullet, bulletTimeToLive);

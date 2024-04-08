@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: predator_range
   m_EditorClassIdentifier: 
   unitHealthPoints: -75
-  unitDamage: 15
+  unitDamage: 5
   unitAttackSpeed: 0
   unitCriticalHitChance: 0.1
   unitCooldown: 1

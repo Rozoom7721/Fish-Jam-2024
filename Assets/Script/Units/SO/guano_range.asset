@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: guano_range
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitHealthPoints: -100
-  unitDamage: 15
+  unitDamage: 5
   unitAttackSpeed: 0.3
   unitCriticalHitChance: 0
   unitCooldown: 1
