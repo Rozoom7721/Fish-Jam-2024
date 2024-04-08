@@ -5,7 +5,8 @@ using UnityEngine;
 public class TankUnit : MonoBehaviour, IUnit
 {
 
-    
+    public DamagePlay damagePlay;
+
     public UnitStatistics Stats { get; set; }
 
     public double CurrentHealthPoints;
@@ -84,6 +85,8 @@ public class TankUnit : MonoBehaviour, IUnit
 
     public void TakeDamage(double damage)
     {
+        damagePlay.playThisSoundEffect();
+
         CurrentHealthPoints -= damage;
         CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
 

@@ -7,6 +7,9 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     public double playerLeaderHealth;
     public Sprite playerLeaderSprite;
 
+    public WinMusic winMusic;
+    public LostMusic lostMusic;
+
     public double enemyLeaderHealth;
     public Sprite enemyLeaderSprite;
 
@@ -50,7 +53,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     public string playerUnitsLayer = "PlayerUnits";
     public string enemyUnitsLayer = "EnemyUnits";
 
-
+    public bool endGame;
 
     private void Start()
     {
@@ -64,7 +67,7 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
         playerLeaderHealth = playerFraction.fractionStatistics.leaderHealthPoints;
         enemyLeaderHealth = enemyFraction.fractionStatistics.leaderHealthPoints;
 
-
+        endGame = false;
 
 
         CalculateCosts();
@@ -95,10 +98,20 @@ public class BattleSystem : MonoBehaviour, ILeaderHitListener
     {
        if(playerLeaderHealth > 0)
         {
+            if (endGame == false)
+            {
+                winMusic.playThisSoundEffect();
+                endGame = true;
+            }
             winScreen.SetActive(true);
         }
        else
         {
+            if (endGame == false)
+            {
+                lostMusic.playThisSoundEffect();
+                endGame = true;
+            }
             loseScreen.SetActive(true);
         }
     }
