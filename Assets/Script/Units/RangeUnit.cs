@@ -28,9 +28,12 @@ public class RangeUnit : MonoBehaviour, IUnit
     public float bulletSpeed;
     public float bulletTimeToLive;
 
+    public DamagePlay damagePlay;
+
 
     private void Awake()
     {
+
         Stats = GetComponent<UnitStatistics>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -45,6 +48,9 @@ public class RangeUnit : MonoBehaviour, IUnit
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = spriteRenderer.bounds.size;
         }
+
+        damagePlay = GameObject.FindGameObjectWithTag("Punch").GetComponent<DamagePlay>();
+
     }
 
     public void init(Fraction fraction, bool _isPlayer)
@@ -112,6 +118,7 @@ public class RangeUnit : MonoBehaviour, IUnit
     private void AttackRange()
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
 
         string tag = "";
         string layer = "";

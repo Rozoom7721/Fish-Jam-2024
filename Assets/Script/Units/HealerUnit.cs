@@ -70,8 +70,11 @@ public class HealerUnit : MonoBehaviour, IUnit
     {
         if (otherUnit != null)
         {
+
+            damagePlay.playThisSoundEffect();
+
             // for player unit
-            if(isPlayer)
+            if (isPlayer)
             {
                 if (otherUnit.Stats.gameObject.tag == "EnemyUnit")
                 {
@@ -101,7 +104,6 @@ public class HealerUnit : MonoBehaviour, IUnit
 
     public void TakeDamage(double damage)
     {
-        damagePlay.playThisSoundEffect();
 
         CurrentHealthPoints -= damage;
         CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
@@ -134,6 +136,7 @@ public class HealerUnit : MonoBehaviour, IUnit
     public void AttackLeader()
     {
         battleSystem.onLeaderHit(!isPlayer, Stats.unitDamage);
+        damagePlay.playThisSoundEffect();
     }
     private void FixedUpdate()
     {

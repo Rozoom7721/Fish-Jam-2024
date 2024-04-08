@@ -73,6 +73,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
         if(otherUnit != null)
         {
+            damagePlay.playThisSoundEffect();
             float crit = Random.RandomRange(0.0f, 1.0f);
             double damage = Stats.unitDamage;
             if (crit < Stats.unitCriticalHitChance)
@@ -87,7 +88,6 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
     public void TakeDamage(double damage)
     {
-        damagePlay.playThisSoundEffect();
         CurrentHealthPoints -= damage;
         CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
         if(CurrentHealthPoints <= 0.0f)
@@ -119,6 +119,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
     public void AttackLeader()
     {
         battleSystem.onLeaderHit(!isPlayer, Stats.unitDamage);
+        damagePlay.playThisSoundEffect();
     }
 
     private void FixedUpdate()
