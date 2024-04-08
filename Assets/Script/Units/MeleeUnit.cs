@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MeleeUnit : MonoBehaviour, IUnit
 {
- 
 
-   
+
+    public DamagePlay damagePlay;
     public UnitStatistics Stats { get ; set; }
 
     public double CurrentHealthPoints;
@@ -70,6 +70,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
     public void Attack(IUnit otherUnit)
     {
+
         if(otherUnit != null)
         {
             otherUnit.TakeDamage(Stats.unitDamage);
@@ -79,6 +80,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
 
     public void TakeDamage(double damage)
     {
+        damagePlay.playThisSoundEffect();
         CurrentHealthPoints -= damage;
         CurrentHealthPoints = Mathf.Clamp((float)CurrentHealthPoints, 0.0f, (float)Stats.unitHealthPoints);
         if(CurrentHealthPoints <= 0.0f)
