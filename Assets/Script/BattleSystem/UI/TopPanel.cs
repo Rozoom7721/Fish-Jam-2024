@@ -17,7 +17,9 @@ public class TopPanel : MonoBehaviour
 
     void Update()
     {
+        long gold = (long)battleSystem.playerGold;
+
         hpText.text = battleSystem.playerLeaderHealth.ToString();
-        goldText.text = battleSystem.playerGold.ToString();
+        goldText.text = gold.ToString();
     }
 }

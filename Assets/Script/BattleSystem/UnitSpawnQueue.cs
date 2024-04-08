@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitSpawnQueue : MonoBehaviour
 {
-    private Queue<string> queue = new Queue<string>();
+    public Queue<string> queue = new Queue<string>();
     private bool full = false;
     private Coroutine processingCoroutine;
     private BattleSystem battleSystem;
@@ -14,6 +14,9 @@ public class UnitSpawnQueue : MonoBehaviour
 
 
     public bool isPlayer;
+
+    private CooldownBar cooldownBar;
+
 
 
     private void Update()
@@ -29,6 +32,8 @@ public class UnitSpawnQueue : MonoBehaviour
     private void Start()
     {
         battleSystem = GameObject.FindAnyObjectByType<BattleSystem>();
+        cooldownBar = GetComponent<CooldownBar>();
+
         isPlayer = true;
     }
 
@@ -72,7 +77,15 @@ public class UnitSpawnQueue : MonoBehaviour
                     break;
             }
 
+
+            cooldownBar
+                .setDuration((float)cooldown)
+                .startCounting();
+            
+
             yield return new WaitForSeconds((float)cooldown);
+
+            cooldownBar.stopCounting();
 
             Debug.Log("Tworzenie jednostki: " + unitType);
             battleSystem.spawnUnit(unitType, isPlayer);
