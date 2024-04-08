@@ -273,6 +273,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
+      propertyPath: bigPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
+      propertyPath: smallPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 531380965948525769, guid: 9a13ed8e1110af74c80eac32574d969a, type: 3}
       propertyPath: all_unit_types.Array.size
       value: 20
       objectReference: {fileID: 0}
