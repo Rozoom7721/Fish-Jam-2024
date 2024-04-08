@@ -44,6 +44,7 @@ public class TankUnit : MonoBehaviour, IUnit
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = spriteRenderer.bounds.size;
         }
+        damagePlay = GameObject.FindGameObjectWithTag("Punch").GetComponent<DamagePlay>();
     }
     public void init(Fraction fraction, bool _isPlayer)
     {

@@ -5,8 +5,8 @@ using UnityEngine;
 public class MeleeUnit : MonoBehaviour, IUnit
 {
 
-
     public DamagePlay damagePlay;
+
     public UnitStatistics Stats { get ; set; }
 
     public double CurrentHealthPoints;
@@ -43,7 +43,7 @@ public class MeleeUnit : MonoBehaviour, IUnit
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = spriteRenderer.bounds.size;
         }
-
+        damagePlay = GameObject.FindGameObjectWithTag("Punch").GetComponent<DamagePlay>();
     }
 
 
