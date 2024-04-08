@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class HighlihghtOnMouseOver : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class HighlihghtOnMouseOver : MonoBehaviour
     public Sprite endSprie;
     public Castle castle;
     public Description description;
+    public SoundPlay soundPlayer;
 
     void OnMouseEnter()
     {
@@ -24,6 +26,8 @@ public class HighlihghtOnMouseOver : MonoBehaviour
         
         castle.SpriteChange();
         description.ChangeDesc();
+        soundPlayer.playThisSoundEffect();
+        
     }
 
 }
