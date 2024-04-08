@@ -1845,8 +1845,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 1, b: 0.9275756, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.44313726, b: 0.4117647, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.92941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1991,7 +1991,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e6bd8dc9d1a6a0c469acc11c7d888be4, type: 2}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: desc
-      value: Ale kurwa kaka4
+      value: These small, swift fish are like arrows amidst the waves. Despite being
+        small in size, guppies have big hearts and unparalleled speed of attack.
+        Their strength may be modest, but their ability to react quickly makes them
+        invaluable allies in battle. Although their lives are fragile, their determination
+        is unbreakable.
       objectReference: {fileID: 0}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: descTmp
@@ -2633,7 +2637,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: desc
-      value: cwel zarloki niger 3
+      value: Gluttons are powerful creatures, whose impressive size makes them nearly
+        unbeatable. They possess immense endurance and strength, allowing them to
+        withstand significant damage during battles. They serve as formidable guardians
+        of the water territory, with their mighty bodies providing protection against
+        intruders.
       objectReference: {fileID: 0}
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: descTmp
@@ -2876,7 +2884,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 44fe4bc56b5d1d74ab47be701f5d196b, type: 2}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: desc
-      value: kurwa szczupak3
+      value: Predators are warrior fish distinguished by their aggressive approach
+        to combat. They are equipped with sharp teeth and swift movements, allowing
+        them to inflict significant damage in rapid attacks. Their main goal is to
+        eliminate enemies as quickly as possible to gain control over the waters.
       objectReference: {fileID: 0}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: descTmp
@@ -2890,6 +2901,81 @@ PrefabInstance:
       insertIndex: 4
       addedObject: {fileID: 1242289578}
   m_SourcePrefab: {fileID: 100100000, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
+--- !u!1 &412528096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412528097}
+  - component: {fileID: 412528099}
+  - component: {fileID: 412528098}
+  m_Layer: 5
+  m_Name: leader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &412528097
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412528096}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.71714, y: 0.71714, z: 0.71714}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1478946381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -260, y: 150.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &412528098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412528096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d38af3e646976c4468ce3e40be207427, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &412528099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412528096}
+  m_CullTransparentMesh: 1
 --- !u!1 &436740269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6482932304036498117, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
@@ -4973,7 +5059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -414, y: -61}
+  m_AnchoredPosition: {x: -432, y: -61}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835853437
@@ -4997,9 +5083,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0, g: 1, b: 0.92941177, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.4433962, b: 0.41209772, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.92941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5302,7 +5388,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 634269fe64c3c95409869b6e1f0cc1b7, type: 2}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: desc
-      value: kurwa szczupak4
+      value: Predators are warrior fish distinguished by their aggressive approach
+        to combat. They are equipped with sharp teeth and swift movements, allowing
+        them to inflict significant damage in rapid attacks. Their main goal is to
+        eliminate enemies as quickly as possible to gain control over the waters.
       objectReference: {fileID: 0}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: descTmp
@@ -5650,7 +5739,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: desc
-      value: cwelkarp3
+      value: Rare Fish are mysterious creatures, whose powers and abilities are a
+        constant source of fascination and uncertainty. The full extent of their
+        potential and motivations is unknown, making them the subject of legends
+        and tales throughout the aquatic kingdom. Among them, one can encounter both
+        extraordinary combat skills and magical powers that can alter the course
+        of battle.
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: descTmp
@@ -6448,8 +6542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28, y: -9.336182}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 87.87218, y: -120.976555}
+  m_SizeDelta: {x: 859.7271, y: 364.6665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070545390
 MonoBehaviour:
@@ -6767,7 +6861,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: desc
-      value: cwel zarloki niger 4
+      value: Gluttons are powerful creatures, whose impressive size makes them nearly
+        unbeatable. They possess immense endurance and strength, allowing them to
+        withstand significant damage during battles. They serve as formidable guardians
+        of the water territory, with their mighty bodies providing protection against
+        intruders.
       objectReference: {fileID: 0}
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: descTmp
@@ -6927,7 +7025,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: desc
-      value: cwelkarp2
+      value: Rare Fish are mysterious creatures, whose powers and abilities are a
+        constant source of fascination and uncertainty. The full extent of their
+        potential and motivations is unknown, making them the subject of legends
+        and tales throughout the aquatic kingdom. Among them, one can encounter both
+        extraordinary combat skills and magical powers that can alter the course
+        of battle.
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: descTmp
@@ -7439,7 +7542,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b48c9460e3db36d48b9e4a59033305de, type: 2}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: desc
-      value: Ale kurwa kaka3
+      value: These small, swift fish are like arrows amidst the waves. Despite being
+        small in size, guppies have big hearts and unparalleled speed of attack.
+        Their strength may be modest, but their ability to react quickly makes them
+        invaluable allies in battle. Although their lives are fragile, their determination
+        is unbreakable.
       objectReference: {fileID: 0}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: descTmp
@@ -7675,8 +7782,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 1, b: 0.9275756, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.44313726, b: 0.4117647, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.92941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -7825,7 +7932,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 79daae0aecb403e4a818f1f05d85578d, type: 2}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: desc
-      value: Ale kurwa kaka2
+      value: These small, swift fish are like arrows amidst the waves. Despite being
+        small in size, guppies have big hearts and unparalleled speed of attack.
+        Their strength may be modest, but their ability to react quickly makes them
+        invaluable allies in battle. Although their lives are fragile, their determination
+        is unbreakable.
       objectReference: {fileID: 0}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: descTmp
@@ -8213,7 +8324,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: desc
-      value: cwelkarp4
+      value: Rare Fish are mysterious creatures, whose powers and abilities are a
+        constant source of fascination and uncertainty. The full extent of their
+        potential and motivations is unknown, making them the subject of legends
+        and tales throughout the aquatic kingdom. Among them, one can encounter both
+        extraordinary combat skills and magical powers that can alter the course
+        of battle.
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: descTmp
@@ -9304,6 +9420,7 @@ RectTransform:
   - {fileID: 1241725333}
   - {fileID: 537285210}
   - {fileID: 962257119}
+  - {fileID: 412528097}
   - {fileID: 364797935}
   - {fileID: 1060237272}
   - {fileID: 1132747914}
@@ -9758,7 +9875,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9362c5f1bc3f4f44bac977ea98915124, type: 2}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: desc
-      value: kurwa szczupak2
+      value: Predators are warrior fish distinguished by their aggressive approach
+        to combat. They are equipped with sharp teeth and swift movements, allowing
+        them to inflict significant damage in rapid attacks. Their main goal is to
+        eliminate enemies as quickly as possible to gain control over the waters.
       objectReference: {fileID: 0}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: descTmp
@@ -10242,7 +10362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413.99997, y: -156}
+  m_AnchoredPosition: {x: -431.99997, y: -156}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702840693
@@ -10266,9 +10386,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0, g: 1, b: 0.92941177, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.4433962, b: 0.41209772, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.92941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -10778,8 +10898,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 1, b: 0.9275756, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.44313726, b: 0.4117647, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.92941177, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -11617,7 +11737,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: desc
-      value: cwel zarloki niger 2
+      value: Gluttons are powerful creatures, whose impressive size makes them nearly
+        unbeatable. They possess immense endurance and strength, allowing them to
+        withstand significant damage during battles. They serve as formidable guardians
+        of the water territory, with their mighty bodies providing protection against
+        intruders.
       objectReference: {fileID: 0}
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: descTmp
@@ -12110,8 +12234,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.38439226, g: 0, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.61316305, g: 0.37169808, b: 1, a: 1}
+    m_PressedColor: {r: 0.38431373, g: 0, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -12308,6 +12432,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
+      propertyPath: desc
+      value: Rare Fish are mysterious creatures, whose powers and abilities are a
+        constant source of fascination and uncertainty. The full extent of their
+        potential and motivations is unknown, making them the subject of legends
+        and tales throughout the aquatic kingdom. Among them, one can encounter both
+        extraordinary combat skills and magical powers that can alter the course
+        of battle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363735867964403154, guid: 35508dc01e340d249a44de2206cb1194, type: 3}
       propertyPath: descTmp
       value: 
       objectReference: {fileID: 1070545390}
@@ -12327,6 +12460,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 929794871}
     m_Modifications:
+    - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
+      propertyPath: desc
+      value: Gluttons are powerful creatures, whose impressive size makes them nearly
+        unbeatable. They possess immense endurance and strength, allowing them to
+        withstand significant damage during battles. They serve as formidable guardians
+        of the water territory, with their mighty bodies providing protection against
+        intruders.
+      objectReference: {fileID: 0}
     - target: {fileID: 416680075893386176, guid: 46dc78bc85816e841a6786507d6d7be8, type: 3}
       propertyPath: descTmp
       value: 
@@ -12472,6 +12613,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
+      propertyPath: desc
+      value: Predators are warrior fish distinguished by their aggressive approach
+        to combat. They are equipped with sharp teeth and swift movements, allowing
+        them to inflict significant damage in rapid attacks. Their main goal is to
+        eliminate enemies as quickly as possible to gain control over the waters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125474376622235321, guid: 3146e963392ae344ba7d65546dab98ea, type: 3}
       propertyPath: descTmp
       value: 
       objectReference: {fileID: 1070545390}
@@ -12574,7 +12722,11 @@ PrefabInstance:
       objectReference: {fileID: 1478946382}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: desc
-      value: Ale kurwa kaka1
+      value: These small, swift fish are like arrows amidst the waves. Despite being
+        small in size, guppies have big hearts and unparalleled speed of attack.
+        Their strength may be modest, but their ability to react quickly makes them
+        invaluable allies in battle. Although their lives are fragile, their determination
+        is unbreakable.
       objectReference: {fileID: 0}
     - target: {fileID: 5807217385728899103, guid: e92f2e8da63f81f4fa481bba675f1d3d, type: 3}
       propertyPath: descTmp
