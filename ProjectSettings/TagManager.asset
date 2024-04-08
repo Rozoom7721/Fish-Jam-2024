@@ -15,6 +15,7 @@ TagManager:
   - EnemyLeader
   - PlayerBullet
   - EnemyBullet
+  - Punch
   layers:
   - Default
   - TransparentFX
