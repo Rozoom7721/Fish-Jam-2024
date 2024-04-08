@@ -427,11 +427,31 @@ public class Fraction : MonoBehaviour
 
         }
 
+
+        // save skills
+        PlayerPrefs.SetInt("passiveGoldIncome", fractionSkills.passiveGoldIncome);
+        PlayerPrefs.SetInt("goldIncomeForUnit", fractionSkills.goldIncomeForUnit);
+
+        PlayerPrefs.SetInt("unitHealthPoints", fractionSkills.unitHealthPoints);
+        PlayerPrefs.SetInt("leaderHealthPoints", fractionSkills.leaderHealthPoints);
+
+        PlayerPrefs.SetInt("cooldownOfSkills", fractionSkills.cooldownOfSkills);
+        PlayerPrefs.SetInt("unitAttackSpeed", fractionSkills.unitAttackSpeed);
+
+        PlayerPrefs.SetInt("unitDamage", fractionSkills.unitDamage);
+        PlayerPrefs.SetInt("unitCriticalHitChance", fractionSkills.unitCriticalHitChance);
+
+
+
+
+
+
     }
 
     private void loadData()
     {
         string levelsDoneString = PlayerPrefs.GetString("levelsDone", "");
+
         string[] levelsDoneArray = levelsDoneString.Split(',');
 
         foreach (string levelString in levelsDoneArray)
@@ -451,13 +471,18 @@ public class Fraction : MonoBehaviour
         string availbleUnitsString = PlayerPrefs.GetString("availbleUnits", "");
         string[] availbleUnitsArray = availbleUnitsString.Split(',');
 
+
+        Debug.Log("load: availbleUnitsString: " + availbleUnitsString);
+
+
         foreach (string unitId in availbleUnitsArray)
         {
             foreach (UnitStats unit in all_unit_types)
             {
                 if(unit.unitId == unitId)
                 {
-                    availbleUnits.Add(unit);
+                    if(!availbleUnits.Contains(unit))
+                        availbleUnits.Add(unit);
                     break;
                 }
             }
@@ -513,6 +538,20 @@ public class Fraction : MonoBehaviour
                 }
             }
         }
+
+
+        fractionSkills.passiveGoldIncome = PlayerPrefs.GetInt("passiveGoldIncome", 0);
+        fractionSkills.goldIncomeForUnit = PlayerPrefs.GetInt("goldIncomeForUnit", 0);
+
+        fractionSkills.unitHealthPoints = PlayerPrefs.GetInt("unitHealthPoints", 0);
+        fractionSkills.leaderHealthPoints = PlayerPrefs.GetInt("leaderHealthPoints", 0);
+
+        fractionSkills.cooldownOfSkills = PlayerPrefs.GetInt("cooldownOfSkills", 0);
+        fractionSkills.unitAttackSpeed = PlayerPrefs.GetInt("unitAttackSpeed", 0);
+
+        fractionSkills.unitDamage = PlayerPrefs.GetInt("unitDamage", 0);
+        fractionSkills.unitCriticalHitChance = PlayerPrefs.GetInt("unitCriticalHitChance", 0);
+
 
     }
 
